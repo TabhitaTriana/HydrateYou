@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HydrateYou</string>
+    <string name="title_knp_air_penting">Kenapa minum air putih penting?</string>
+    <string name="explanation_air_putih">Air putih adalah cairan esensial bagi tubuh, berfungsi untuk menjaga hidrasi, mengatur suhu tubuh, dan membantu proses detoksifikasi. Selain itu, air putih berperan penting dalam pencernaan, menjaga kesehatan kulit, dan meningkatkan kinerja fisik. Karena tidak mengandung kalori,
+        air putih merupakan pilihan yang baik untuk menjaga berat badan dan kesehatan secara keseluruhan. Untuk kesehatan optimal,
+        disarankan agar orang dewasa mengonsumsi sekitar 2 hingga 3 liter air putih setiap hari, tergantung pada aktivitas dan kondisi lingkungan.</string>
+    <string name="subtitle_perbandingan_kontribusi_hidrasi">Perbandingan kontribusi hidrasi harian setiap jenis minuman</string>
+
+</resources>
