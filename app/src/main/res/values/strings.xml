@@ -5,5 +5,9 @@
         air putih merupakan pilihan yang baik untuk menjaga berat badan dan kesehatan secara keseluruhan. Untuk kesehatan optimal,
         disarankan agar orang dewasa mengonsumsi sekitar 2 hingga 3 liter air putih setiap hari, tergantung pada aktivitas dan kondisi lingkungan.</string>
     <string name="subtitle_perbandingan_kontribusi_hidrasi">Perbandingan kontribusi hidrasi harian setiap jenis minuman</string>
+    <string name="air_putih_title">Air Putih</string>
+    <string name="air_putih_desc">Kontribusi harian air putih sangat penting untuk kesehatan. Dengan konsumsi sekitar 2-3 liter per hari, air membantu menjaga keseimbangan cairan, mendukung pencernaan,
+        dan mengatur suhu tubuh melalui berkeringat.</string>
+    <string name="soft_drink_title">Minuman Ringan</string>
 
 </resources>
