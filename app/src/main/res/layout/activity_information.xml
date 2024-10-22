@@ -7,6 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".Information">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="50dp" />
 
 
 <ScrollView
@@ -67,8 +73,41 @@
         android:layout_marginTop="16dp"/>
     
     <TextView
+        android:id="@+id/tvAirPutih"
         android:layout_width="0dp"
-        android:layout_height=""
+        android:layout_height="wrap_content"
+        android:text="@string/air_putih_title"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/imgAirPutih"
+        app:layout_constraintStart_toEndOf="@id/imgAirPutih"
+        android:layout_marginStart="16dp"/>
+    <TextView
+        android:id="@+id/tvAirPutihDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/air_putih_desc"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tvAirPutih"
+        app:layout_constraintStart_toEndOf="@id/imgAirPutih"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"/>
+    <ImageView
+        android:id="@+id/imgSoftDrink"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_soft_drink"
+        app:layout_constraintTop_toBottomOf="@id/tvAirPutihDesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+    <TextView
+        android:id="@+id/tvSoftDrink"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/soft_drink_title"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/imgSoftDrink"
+        app:layout_constraintStart_toStartf="@id/imgSoftDrink"
+        android:layout_marginStart="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
