@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="104dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="24dp"
+        android:text="Hari ini"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="14 November 2024"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="25 ml"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="16dp" />
+
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="16dp"
+        android:text="50 ml"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView4" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="272dp"
+        android:layout_marginTop="16dp"
+        android:text="100 ml"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="200 ml"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="547dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="300 ml"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="547dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="400 ml"
+        tools:layout_editor_absoluteX="272dp"
+        tools:layout_editor_absoluteY="547dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="14 Nov"
+        android:backgroundTint="@color/blue_DDF"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="111dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="15 Nov"
+        android:backgroundTint="@color/blue_DDF"
+        tools:layout_editor_absoluteX="106dp"
+        tools:layout_editor_absoluteY="111dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="16 Nov"
+        android:backgroundTint="@color/blue_DDF"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="111dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="17 Nov"
+        android:backgroundTint="@color/blue_DDF"
+        tools:layout_editor_absoluteX="247dp"
+        tools:layout_editor_absoluteY="111dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="18 Nov"
+        android:backgroundTint="@color/blue_DDF"
+        tools:layout_editor_absoluteX="323dp"
+        tools:layout_editor_absoluteY="111dp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue_DDF"
+        android:text="Pelacak Air"
+        tools:layout_editor_absoluteX="-10dp"
+        tools:layout_editor_absoluteY="192dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="78dp"
+        android:layout_height="81dp"
+        app:srcCompat="@drawable/ic_air_putih"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="278dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="78dp"
+        android:layout_height="81dp"
+        app:srcCompat="@drawable/ic_air_putih"
+        tools:layout_editor_absoluteX="257dp"
+        tools:layout_editor_absoluteY="278dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="78dp"
+        android:layout_height="81dp"
+        app:srcCompat="@drawable/ic_air_putih"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="278dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="78dp"
+        android:layout_height="81dp"
+        app:srcCompat="@drawable/ic_air_putih"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="278dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="78dp"
+        android:layout_height="81dp"
+        app:srcCompat="@drawable/ic_air_putih"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="446dp" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="78dp"
+        android:layout_height="81dp"
+        app:srcCompat="@drawable/ic_air_putih"
+        tools:layout_editor_absoluteX="257dp"
+        tools:layout_editor_absoluteY="446dp" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="78dp"
+        android:layout_height="81dp"
+        app:srcCompat="@drawable/ic_air_putih"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="446dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="331dp"
+        android:layout_height="268dp"
+        android:background="@drawable/rounded_button"
+        android:text=""
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="416dp"
+        android:layout_marginStart="36dp" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="Hei, sudah waktunya tidur! Sebelum kamu memejamkan mata, minum segelas air dulu untuk menjaga hidrasi tubuhmu. Istirahat yang baik membuatmu lebih segar esok hari. "
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="481dp" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue_164"
+        android:text="OK"
+        android:textColor="@android:color/white"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="602dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
