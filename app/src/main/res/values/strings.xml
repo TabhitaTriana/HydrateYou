@@ -9,5 +9,8 @@
     <string name="air_putih_desc">Kontribusi harian air putih sangat penting untuk kesehatan. Dengan konsumsi sekitar 2-3 liter per hari, air membantu menjaga keseimbangan cairan, mendukung pencernaan,
         dan mengatur suhu tubuh melalui berkeringat.</string>
     <string name="soft_drink_title">Minuman Ringan</string>
+    <string name="soft_drink_desc">Soft drink adalah minuman ringan yang mengandung karbonasi, gula, dan perasa.
+        Meskipun menyegarkan, konsumsi berlebihan dapat menyebabkan masalah kesehatan seperti obesitas, diabetes tipe 2, dan kerusakan gigi. Soft drink tinggi kalori, seringkali tanpa nilai gizi, dan
+        dapat mengurangi asupan air putih yang penting untuk hidrasi.</string>
 
 </resources>
