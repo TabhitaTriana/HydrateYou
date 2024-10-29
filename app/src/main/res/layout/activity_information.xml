@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue_DDF"
     tools:context=".Information">
 
     <androidx.constraintlayout.widget.Guideline
@@ -14,42 +15,43 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="0dp" />
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp">
+        android:padding="16dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:layout_height="wrap_content">
 
+            <!-- Title -->
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title_knp_air_penting"
                 android:textColor="@color/blue_427"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <!-- Explanation Section -->
             <TextView
                 android:id="@+id/tvExplanation"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="@color/blue_9BB"
+                android:background="@drawable/stroke_rounded"
                 android:padding="16dp"
                 android:text="@string/explanation_air_putih"
                 android:textColor="@color/black"
+                android:elevation="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitle"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
+            <!-- Subtitle -->
             <TextView
                 android:id="@+id/tvSubtitle"
                 android:layout_width="wrap_content"
@@ -57,91 +59,124 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/subtitle_perbandingan_kontribusi_hidrasi"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvExplanation"
-                app:layout_constraintTop_toStartOf="parent" />
-
-            <ImageView
-                android:id="@+id/imgAirPutih"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/ic_air_putih"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
+                app:layout_constraintTop_toBottomOf="@+id/tvExplanation" />
 
-            <TextView
-                android:id="@+id/tvAirPutih"
+            <!-- Air Putih Section -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardAirPutih"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:text="@string/air_putih_title"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toEndOf="@id/imgAirPutih"
-                app:layout_constraintTop_toTopOf="@id/imgAirPutih" />
-
-            <TextView
-                android:id="@+id/tvAirPutihDesc"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="@string/air_putih_desc"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/imgAirPutih"
-                app:layout_constraintTop_toBottomOf="@id/tvAirPutih" />
-
-            <ImageView
-                android:id="@+id/imgSoftDrink"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/ic_soft_drink"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvAirPutihDesc" />
-
-            <TextView
-                android:id="@+id/tvSoftDrink"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/soft_drink_title"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/tvSoftDrinkDesc"
-                app:layout_constraintEnd_toStartOf="@id/imgSoftDrink"
-
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvSoftDrinkDesc"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/soft_drink_desc"
-                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"
+                android:elevation="4dp"
+                app:cardCornerRadius="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/imgSoftDrink"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imgSoftDrink"/>
+                app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@color/blue_DDF">
 
-            <!--    <View-->
-            <!--        android:id="@+id/footer"-->
-            <!--        android:layout_width="0dp"-->
-            <!--        android:layout_height="80dp"-->
-            <!--        android:background="@color/blue_164"-->
-            <!--        app:layout_constraintTop_toBottomOf="@id/imgSoftDrink"-->
-            <!--        app:layout_constraintStart_toStartOf="parent"-->
-            <!--        app:layout_constraintEnd_toEndOf="parent"-->
-            <!--        android:layout_marginTop="16dp"/>-->
+                    <ImageView
+                        android:id="@+id/imgAirPutih"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_air_putih"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
+                    <TextView
+                        android:id="@+id/tvAirPutih"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="@string/air_putih_title"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@id/imgAirPutih"
+                        app:layout_constraintTop_toTopOf="@id/imgAirPutih" />
 
+                    <TextView
+                        android:id="@+id/tvAirPutihDesc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/air_putih_desc"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@id/imgAirPutih"
+                        app:layout_constraintTop_toBottomOf="@id/tvAirPutih"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Soft Drink Section -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSoftDrink"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:elevation="4dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardAirPutih">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@color/blue_DDF">
+
+                    <ImageView
+                        android:id="@+id/imgSoftDrink"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_soft_drink"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvSoftDrink"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="@string/soft_drink_title"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/imgSoftDrink"
+                        app:layout_constraintTop_toTopOf="@id/imgSoftDrink" />
+
+                    <TextView
+                        android:id="@+id/tvSoftDrinkDesc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="@string/soft_drink_desc"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toStartOf="@id/imgSoftDrink"
+                        app:layout_constraintTop_toBottomOf="@id/tvSoftDrink"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Footer -->
+            <View
+                android:id="@+id/footer"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:background="@color/blue_164"
+                app:layout_constraintTop_toBottomOf="@id/cardSoftDrink"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
