@@ -7,8 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="blue_164">#164863</color>
-    <color name="blue_427">#427D9D</color>
-    <color name="blue_9BB">#9BBEC8</color>
-    <color name="blue_DDF">#DDF2FD</color>
+    <color name="biru_tua">#164863</color>
+    <color name="biru_sedang">#427D9D</color>
+    <color name="blue_langit">#9BBEC8</color>
+    <color name="blue_muda">#DDF2FD</color>
 </resources>
