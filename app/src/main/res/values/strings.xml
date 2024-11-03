@@ -12,6 +12,7 @@
     <string name="soft_drink_desc">Soft drink adalah minuman ringan yang mengandung karbonasi, gula, dan perasa.
         Meskipun menyegarkan, konsumsi berlebihan dapat menyebabkan masalah kesehatan seperti obesitas, diabetes tipe 2, dan kerusakan gigi. Soft drink tinggi kalori, seringkali tanpa nilai gizi, dan
         dapat mengurangi asupan air putih yang penting untuk hidrasi.</string>
+    <string name="minuman_energi_tittle">Minuman Energi</string>
 
     <string name="tv_heading">Welcome Back!</string>
     <string name="tv_subheading">login to continue</string>
