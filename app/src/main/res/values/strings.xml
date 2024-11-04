@@ -23,5 +23,7 @@
     <string name="forgot_password">Forgot Password?</string>
     <string name="log_in">Log In</string>
     <string name="account">Don\'t have an account? <b>Sign in</b></string>
+    <string name="tv_pengingat_minum">Sudah minum air hari ini?</string>
+    <string name="tv_pengingat_panjang">Yuk, jangan lupa untuk minum air sekarang! Hidrasi yang baik penting untuk menjaga fokus dan energimu sepanjang hari.</string>
 
 </resources>
