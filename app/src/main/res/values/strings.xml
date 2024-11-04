@@ -25,5 +25,11 @@
     <string name="account">Don\'t have an account? <b>Sign in</b></string>
     <string name="tv_pengingat_minum">Sudah minum air hari ini?</string>
     <string name="tv_pengingat_panjang">Yuk, jangan lupa untuk minum air sekarang! Hidrasi yang baik penting untuk menjaga fokus dan energimu sepanjang hari.</string>
+    <string name="tv_create_acc">Create New Account</string>
+    <string name="tv_username">Username</string>
+    <string name="tv_email">email</string>
+    <string name="daftar">Sign Up</string>
+    <string name="password">password</string>
+    <string name="re_password">re-password</string>
 
 </resources>
