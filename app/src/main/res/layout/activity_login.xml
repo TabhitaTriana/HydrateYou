@@ -6,15 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="24dp"
+    android:layout_marginTop="104dp"
     tools:context=".Login">
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/top_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="24dp"
-        app:layout_constraintGuide_end="24dp"/>
 
     <TextView
         android:id="@+id/heading"
@@ -89,6 +82,7 @@
         android:layout_marginBottom="16dp"/>
 
     <CheckBox
+        android:id="@+id/checkbox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/remember_me"
@@ -96,17 +90,6 @@
         android:layout_marginTop="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"/>
-
-    <TextView
-        android:id="@+id/forgot_password"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/forgot_password"
-        android:textSize="16sp"
-        android:layout_marginTop="16sp"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password"/>
 
     <Button
         android:id="@+id/login"
@@ -118,11 +101,10 @@
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/forgot_password" />
-
+        app:layout_constraintTop_toBottomOf="@id/checkbox" />
 
     <TextView
-        android:id="@+id/tv_sign"
+        android:id="@+id/tv_signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/account"

@@ -22,7 +22,7 @@
             android:name=".SignUp"
             android:exported="false" />
         <activity
-            android:name=".Landing"
+            android:name=".SplashScreen"
             android:exported="false" />
         <activity
             android:name=".Information"
