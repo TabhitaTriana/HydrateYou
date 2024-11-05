@@ -29,5 +29,6 @@
     <string name="tv_email">Email</string>
     <string name="daftar">Daftar</string>
     <string name="re_password">Ulangi Kata Sandi</string>
+    <string name="ok">Ok</string>
 
 </resources>

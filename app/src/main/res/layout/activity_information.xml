@@ -37,19 +37,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <!-- Explanation Section -->
-            <TextView
-                android:id="@+id/tvExplanation"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/stroke_rounded"
-                android:padding="16dp"
-                android:text="@string/explanation_air_putih"
-                android:textColor="@color/black"
-                android:elevation="2dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
             <!-- Subtitle -->
             <TextView
@@ -113,6 +100,16 @@
                         app:layout_constraintStart_toEndOf="@id/imgAirPutih"
                         app:layout_constraintTop_toBottomOf="@id/tvAirPutih"
                         app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvExplanation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/stroke_rounded"
+                        android:elevation="2dp"
+                        android:padding="16dp"
+                        android:text="@string/explanation_air_putih"
+                        android:textColor="@color/black" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
