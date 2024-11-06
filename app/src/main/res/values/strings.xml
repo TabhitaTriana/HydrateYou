@@ -27,5 +27,22 @@
     <string name="_300_ml">300 ml</string>
     <string name="_400_ml">400 ml</string>
     <string name="hei_sudah">Hei, sudah waktunya tidur! Sebelum kamu memejamkan mata, minum segelas air dulu untuk menjaga hidrasi tubuhmu. Istirahat yang baik membuatmu lebih segar esok hari.</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="login_to_continue">Login to Continue</string>
+    <string name="username">Username</string>
+    <string name="input_your_username">Input Your Username</string>
+    <string name="password">Password</string>
+    <string name="input_your_password">Input Your Password</string>
+    <string name="remember_me">Remember Me?</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="don_t_have_an_account_sign_in">Don\'t have an account? Sign in</string>
+    <string name="welcome_to_hydrateyou">Welcome to, HydrateYou</string>
+    <string name="create_a_new_account">Create a New Account</string>
+    <string name="name">Name</string>
+    <string name="input_your_name">Input Your Name</string>
+    <string name="email">Email</string>
+    <string name="re_password">Re-Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in">Log In</string>
 
 </resources>
