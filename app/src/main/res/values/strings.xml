@@ -30,5 +30,12 @@
     <string name="daftar">Daftar</string>
     <string name="re_password">Ulangi Kata Sandi</string>
     <string name="ok">Ok</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="selesai">Selesai</string>
+    <string name="nama">Nama</string>
+    <string name="usia">Usia</string>
+    <string name="berat_badan">Berat Badan</string>
+    <string name="isi_usia">11 tahun</string>
+    <string name="tinggi_badan">Tinggi Badan</string>
 
 </resources>

@@ -8,8 +8,6 @@
     android:background="@color/blue_9BB"
     tools:context=".PengingatMinum">
 
-    <!-- close button belum -->
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="0dp"
