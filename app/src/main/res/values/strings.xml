@@ -44,5 +44,9 @@
     <string name="re_password">Re-Password</string>
     <string name="sign_up">Sign Up</string>
     <string name="log_in">Log In</string>
+    <string name="profile">Profile</string>
+    <string name="challenge">Challenge</string>
+    <string name="home">Home</string>
+    <string name="information">Information</string>
 
 </resources>
