@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.hydrateyou"
-    compileSdk = 34
+    compileSdk = 27
 
     defaultConfig {
         applicationId = "com.example.hydrateyou"

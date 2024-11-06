@@ -8,14 +8,8 @@
     android:background="@color/white"
     tools:context=".Information">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/top_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="0dp" />
 
-    <ScrollView
+     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
@@ -27,41 +21,66 @@
 
             <!-- Title -->
             <TextView
-                android:id="@+id/tvTitle"
+                android:id="@+id/tvTitle1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/title_knp_air_penting"
-                android:textColor="@color/black"
-                android:textSize="24sp"
+                android:text="Kenapa Minum"
+                android:textColor="@color/blue_427"
+                android:textSize="32sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTitle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Air Putih"
+                android:textColor="@color/blue_427"
+                android:textSize="60sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle1"/>
+
+            <TextView
+                android:id="@+id/tvTitle3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Itu Penting?"
+                android:textColor="@color/blue_427"
+                android:textSize="60sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle2"/>
 
             <!-- Explanation Section -->
             <TextView
                 android:id="@+id/tvExplanation"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:padding="16dp"
                 android:text="@string/explanation_air_putih"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitle"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle3" />
+
 
             <!-- Subtitle -->
             <TextView
                 android:id="@+id/tvSubtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:padding="12dp"
                 android:text="@string/subtitle_perbandingan_kontribusi_hidrasi"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:gravity="center"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvExplanation" />
+
+
 
             <!-- Air Putih Section -->
             <androidx.cardview.widget.CardView
