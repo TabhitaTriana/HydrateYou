@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="challenge_title" type="id" />
+    <item name="daily_goal" type="id" />
+    <item name="progress_title" type="id" />
+    <item name="daily_progress" type="id" />
+    <item name="water_intake" type="id" />
+    <item name="add_water_button" type="id" />
+</resources>
