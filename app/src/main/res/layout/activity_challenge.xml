@@ -22,6 +22,15 @@
         android:paddingBottom="8dp"/>
 
     <!-- Target Tantangan -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height=""
+        android:text="1000"
+        android android:background="@drawable/stroke"
+        tools:layout_editor_absoluteX="330dp"
+        tools:layout_editor_absoluteY="-3dp" />
+
     <TextView
         android:id="@+id/daily_goal"
         android:layout_width="wrap_content"
