@@ -49,4 +49,15 @@
     <string name="home">Home</string>
     <string name="information">Information</string>
 
+    <string name="tv_heading">Welcome Back!</string>
+    <string name="tv_subheading">login to continue</string>
+    <string name="tv_user">username</string>
+    <string name="tv_input_user">input your username</string>
+    <string name="tv_pass">password</string>
+    <string name="tv_input_pass">input your password</string>
+    <string name="remember_me">remember me?</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="log_in">Log In</string>
+    <string name="account">Don\'t have an account? <b>Sign in</b></string>
+
 </resources>
