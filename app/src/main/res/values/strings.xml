@@ -48,5 +48,41 @@
     <string name="berat_badan">Berat Badan</string>
     <string name="isi_usia">11 tahun</string>
     <string name="tinggi_badan">Tinggi Badan</string>
+    <string name="informasi_pribadi">Informasi Pribadi</string>
+    <string name="umum">Umum</string>
+    <string name="notifikasi">Notifikasi</string>
+    <string name="kebijakan_privasi">Kebijakan Privasi</string>
+
+    <string name="kebijakan">
+    <b>Terima kasih telah menggunakan HydrateYou. Privasi Anda sangat penting bagi kami. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda.</b>\n\n
+
+    <b>1. Informasi yang Kami Kumpulkan</b>\n
+    Kami mengumpulkan beberapa jenis informasi untuk menyediakan dan meningkatkan layanan kami:\n
+    - Informasi Identitas Pribadi: Nama, alamat email, dan informasi kontak lain yang Anda berikan secara langsung.\n
+    - Informasi Penggunaan: Kami mengumpulkan informasi mengenai bagaimana Anda menggunakan aplikasi kami, termasuk halaman yang dikunjungi, fitur yang digunakan, dan durasi waktu penggunaan.\n
+    - Informasi Teknis: Seperti alamat IP, jenis perangkat, sistem operasi, dan versi aplikasi untuk tujuan analitik dan peningkatan pengalaman pengguna.\n\n
+
+    <b>2. Bagaimana Kami Menggunakan Informasi Anda</b>\n
+    Kami menggunakan informasi yang kami kumpulkan untuk:\n
+    - Menyediakan dan memelihara layanan kami.\n
+    - Memahami bagaimana pengguna menggunakan aplikasi kami dan meningkatkan pengalaman pengguna.\n
+    - Mengirimkan pembaruan, berita, atau pemberitahuan penting terkait aplikasi kami.\n
+    - Mengembangkan fitur-fitur baru dan meningkatkan keamanan aplikasi kami.\n\n
+
+    <b>3. Berbagi Informasi Anda</b>\n
+    Kami tidak akan membagikan informasi pribadi Anda kepada pihak ketiga, kecuali dalam keadaan berikut:\n
+    - Dengan Izin Anda: Kami akan meminta izin Anda jika kami ingin membagikan informasi pribadi Anda.\n
+    - Kepatuhan Hukum: Jika diwajibkan oleh hukum atau otoritas yang berwenang, kami dapat mengungkapkan informasi pribadi Anda.\n
+    - Penyedia Layanan: Kami dapat berbagi informasi dengan penyedia layanan yang bekerja atas nama kami untuk memudahkan operasi aplikasi, seperti layanan analitik atau pembayaran.\n\n
+
+    <b>4. Keamanan Informasi</b>\n
+    Kami berkomitmen untuk melindungi informasi pribadi Anda. Kami menerapkan langkah-langkah keamanan untuk mencegah akses, penggunaan, atau pengungkapan data yang tidak sah. Namun, harap diperhatikan bahwa tidak ada metode transmisi atau penyimpanan elektronik yang 100% aman.\n\n
+
+    <b>5. Hak Anda</b>\n
+    Anda memiliki hak untuk mengakses, memperbarui, atau menghapus informasi pribadi Anda yang ada di sistem kami. Jika Anda ingin melakukan salah satu dari tindakan ini, silakan hubungi kami di [alamat email kontak].\n\n
+
+    <b>6. Perubahan Kebijakan Privasi</b>\n
+    Kebijakan Privasi ini dapat kami perbarui dari waktu ke waktu. Kami akan memberitahukan perubahan signifikan melalui pemberitahuan di dalam aplikasi atau melalui email. Pastikan untuk meninjau kebijakan ini secara berkala agar tetap memahami bagaimana kami melindungi informasi pribadi Anda.
+</string>
 
 </resources>

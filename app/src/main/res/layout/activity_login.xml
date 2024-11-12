@@ -13,7 +13,7 @@
         android:id="@+id/heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/poppins_bold"
         android:textColor="@color/black"
         android:text="@string/tv_heading"
         android:textSize="32sp"
@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         android:text="@string/tv_subheading"
         android:textColor="@color/black"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/heading" />
@@ -41,6 +42,7 @@
         android:textSize="24sp"
         android:textColor="@color/black"
         android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/subheading"/>
@@ -65,6 +67,7 @@
         android:textSize="24sp"
         android:textColor="@color/black"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/username"/>
@@ -88,6 +91,7 @@
         android:text="@string/remember_me"
         android:textSize="16sp"
         android:layout_marginTop="16sp"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"/>
 
@@ -100,6 +104,7 @@
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/blue_164"
         android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/checkbox" />

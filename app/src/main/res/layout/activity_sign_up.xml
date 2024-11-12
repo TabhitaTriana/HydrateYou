@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="24dp"
-    android:layout_marginTop="40dp"
     tools:context=".Login">
 
     <TextView
@@ -17,7 +16,11 @@
         android:textSize="32sp"
         android:layout_marginTop="40dp"
         android:textColor="@color/black"
-        android:textStyle="bold"/>
+        android:fontFamily="@font/poppins_bold"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/tv_user"
@@ -27,6 +30,7 @@
         android:textSize="24sp"
         android:textColor="@color/black"
         android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_create" />
@@ -51,6 +55,7 @@
         android:textSize="24sp"
         android:textColor="@color/black"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_nama"/>
@@ -75,6 +80,7 @@
         android:textSize="24sp"
         android:textColor="@color/black"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_email"/>
@@ -99,6 +105,7 @@
         android:textSize="24sp"
         android:textColor="@color/black"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_pass"/>
@@ -124,6 +131,7 @@
         android:textColor="@color/white"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/blue_164"
+        android:fontFamily="@font/poppins_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_re_pass"/>
