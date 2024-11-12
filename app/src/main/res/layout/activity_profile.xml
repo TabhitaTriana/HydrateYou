@@ -26,7 +26,7 @@
         android:text="@string/tv_user"
         android:textColor="@color/black"
         android:textSize="24sp"
-        android:fontFamily="@font/poppins_semibold"
+        android:fontFamily="@font/righteous"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/account"/>
@@ -35,7 +35,7 @@
         android:id="@+id/tv_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="namapengguna@gmail.com"
+        android:text="@string/namapengguna_gmail_com"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:fontFamily="@font/poppins_regular"
@@ -50,7 +50,7 @@
         android:text="@string/edit_profile"
         android:textColor="@color/white"
         android:backgroundTint="@color/blue_164"
-        android:fontFamily="@font/poppins_regular"
+        android:fontFamily="@font/poppins_bold"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,7 +83,7 @@
                 android:text="@string/berat_badan"
                 android:textColor="@color/black"
                 android:textSize="12sp"
-                android:fontFamily="@font/poppins_regular"/>
+                android:fontFamily="@font/poppins_semibold"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -111,7 +111,7 @@
                 android:text="@string/tinggi_badan"
                 android:textColor="@color/black"
                 android:textSize="12sp"
-                android:fontFamily="@font/poppins_regular" />
+                android:fontFamily="@font/poppins_semibold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -139,7 +139,7 @@
                 android:text="@string/usia"
                 android:textColor="@color/black"
                 android:textSize="12sp"
-                android:fontFamily="@font/poppins_regular" />
+                android:fontFamily="@font/poppins_semibold" />
 
             <TextView
                 android:layout_width="wrap_content"

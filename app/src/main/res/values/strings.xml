@@ -84,5 +84,10 @@
     <b>6. Perubahan Kebijakan Privasi</b>\n
     Kebijakan Privasi ini dapat kami perbarui dari waktu ke waktu. Kami akan memberitahukan perubahan signifikan melalui pemberitahuan di dalam aplikasi atau melalui email. Pastikan untuk meninjau kebijakan ini secara berkala agar tetap memahami bagaimana kami melindungi informasi pribadi Anda.
 </string>
+    <string name="hei_sudah_waktunya_tidur_sebelum_kamu_memejamkan_mata_minum_segelas_air_dulu_untuk_menjaga_hidrasi_tubuhmu_istirahat_yang_baik_membuatmu_lebih_segar_esok_hari_n_selamat_tidur">Hei, sudah waktunya tidur! Sebelum kamu memejamkan mata, minum segelas air dulu untuk menjaga hidrasi tubuhmu. Istirahat yang baik membuatmu lebih segar esok hari. \n Selamat tidur!</string>
+    <string name="air_putih">Air Putih</string>
+    <string name="itu_penting">Itu Penting?</string>
+    <string name="air__putih">Air Putih</string>
+    <string name="namapengguna_gmail_com">namapengguna@gmail.com</string>
 
 </resources>
