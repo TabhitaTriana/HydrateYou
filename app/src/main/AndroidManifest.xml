@@ -13,6 +13,9 @@
         android:theme="@style/Theme.HydrateYou"
         tools:targetApi="31">
         <activity
+            android:name=".KebijakanPrivasi"
+            android:exported="false" />
+        <activity
             android:name=".Profile"
             android:exported="false" />
         <activity
@@ -21,7 +24,6 @@
         <activity
             android:name=".ui.theme.PengingatMinum"
             android:exported="false" />
-
         <activity
             android:name=".activity_dashboard"
             android:exported="false" />

@@ -27,6 +27,7 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:fontFamily="@font/poppins_bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +59,8 @@
         android:text="@string/nama"
         android:textSize="20sp"
         android:textColor="@color/black"
-        android:layout_marginTop="32dp"
+
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/circle" />
@@ -83,6 +85,7 @@
         android:textSize="20sp"
         android:textColor="@color/black"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_nama"/>
@@ -107,6 +110,7 @@
         android:textSize="20sp"
         android:textColor="@color/black"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_usia"/>
@@ -131,6 +135,7 @@
         android:textSize="20sp"
         android:textColor="@color/black"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_berat"/>
@@ -156,6 +161,7 @@
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/blue_164"
         android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_tinggi" />
