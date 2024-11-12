@@ -12,42 +12,17 @@
     <string name="soft_drink_desc">Soft drink adalah minuman ringan yang mengandung karbonasi, gula, dan perasa.
         Meskipun menyegarkan, konsumsi berlebihan dapat menyebabkan masalah kesehatan seperti obesitas, diabetes tipe 2, dan kerusakan gigi. Soft drink tinggi kalori, seringkali tanpa nilai gizi, dan
         dapat mengurangi asupan air putih yang penting untuk hidrasi.</string>
-    <string name="hari_ini">Hari ini</string>
-    <string name="_14_november_2024">14 November 2024</string>
-    <string name="_14_nov">14 Nov</string>
-    <string name="_15_nov">15 Nov</string>
-    <string name="_16_nov">16 Nov</string>
-    <string name="_17_nov">17 Nov</string>
-    <string name="_18_nov">18 Nov</string>
-    <string name="pelacak_air">Pelacak Air</string>
-    <string name="_25_ml">25 ml</string>
-    <string name="_100_ml">100 ml</string>
-    <string name="_50_ml">50 ml</string>
-    <string name="_200_ml">200 ml</string>
-    <string name="_300_ml">300 ml</string>
-    <string name="_400_ml">400 ml</string>
-    <string name="hei_sudah">Hei, sudah waktunya tidur! Sebelum kamu memejamkan mata, minum segelas air dulu untuk menjaga hidrasi tubuhmu. Istirahat yang baik membuatmu lebih segar esok hari.</string>
-    <string name="welcome_back">Welcome Back!</string>
-    <string name="login_to_continue">Login to Continue</string>
-    <string name="username">Username</string>
-    <string name="input_your_username">Input Your Username</string>
-    <string name="password">Password</string>
-    <string name="input_your_password">Input Your Password</string>
-    <string name="remember_me">Remember Me?</string>
-    <string name="forgot_password">Forgot Password?</string>
-    <string name="don_t_have_an_account_sign_in">Don\'t have an account? Sign in</string>
-    <string name="welcome_to_hydrateyou">Welcome to, HydrateYou</string>
-    <string name="create_a_new_account">Create a New Account</string>
-    <string name="name">Name</string>
-    <string name="input_your_name">Input Your Name</string>
-    <string name="email">Email</string>
-    <string name="re_password">Re-Password</string>
-    <string name="sign_up">Sign Up</string>
-    <string name="log_in">Log In</string>
-    <string name="profile">Profile</string>
-    <string name="challenge">Challenge</string>
-    <string name="home">Home</string>
-    <string name="information">Information</string>
+    <string name="minuman_energi_tittle">Minuman Energi</string>
+    <string name="minuman_energi_desc">Minuman energi tidak efektif sebagai sumber hidrasi utama. Kandungan kafeinnya bersifat diuretik,
+        sehingga mempercepat pengeluaran cairan dari tubuh. Selain itu, gula yang tinggi dapat menghambat penyerapan cairan dengan baik.
+        Minuman ini lebih cocok untuk tambahan energi, bukan pengganti air putih. Untuk hidrasi harian, air putih atau minuman elektrolit tetap lebih disarankan.</string>
+    <string name="jus_title">Minuman Jus</string>
+    <string name="jus_desc">Jus buah dapat memberikan kontribusi hidrasi harian karena mengandung air yang cukup tinggi.
+        Selain itu, jus kaya akan vitamin, mineral, dan antioksidan yang bermanfaat untuk kesehatan.
+        Namun, kandungan gula, baik alami maupun tambahan, dapat mempengaruhi keseimbangan cairan.
+        Oleh karena itu, jus sebaiknya tidak dijadikan pengganti air putih untuk hidrasi utama. Untuk manfaat optimal,
+        pilih jus tanpa tambahan gula dan konsumsi dalam jumlah moderat.</string>
+
 
     <string name="tv_heading">Welcome Back!</string>
     <string name="tv_subheading">login to continue</string>
