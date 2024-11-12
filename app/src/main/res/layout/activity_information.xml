@@ -28,6 +28,7 @@
                 android:textColor="@color/blue_427"
                 android:textSize="32sp"
                 android:textStyle="bold"
+                android:fontFamily="@font/righteous"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,7 +36,8 @@
                 android:id="@+id/tvTitle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Air Putih"
+                android:text="@string/air_putih"
+                android:fontFamily="@font/righteous"
                 android:textColor="@color/blue_427"
                 android:textSize="60sp"
                 android:textStyle="bold"
@@ -46,7 +48,8 @@
                 android:id="@+id/tvTitle3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Itu Penting?"
+                android:text="@string/itu_penting"
+                android:fontFamily="@font/righteous"
                 android:textColor="@color/blue_427"
                 android:textSize="60sp"
                 android:textStyle="bold"
@@ -61,6 +64,7 @@
                 android:padding="16dp"
                 android:text="@string/explanation_air_putih"
                 android:textColor="@color/black"
+                android:fontFamily="@font/poppins_regular"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTitle3" />
@@ -74,6 +78,7 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/subtitle_perbandingan_kontribusi_hidrasi"
                 android:textColor="@color/black"
+                android:fontFamily="@font/poppins_semibold"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -116,6 +121,7 @@
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:text="@string/air_putih_title"
+                        android:fontFamily="@font/poppins_bold"
                         android:textColor="@color/black"
                         app:layout_constraintStart_toEndOf="@id/imgAirPutih"
                         app:layout_constraintTop_toTopOf="@id/imgAirPutih" />
@@ -127,6 +133,7 @@
                         android:layout_marginStart="16dp"
                         android:text="@string/air_putih_desc"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_regular"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toEndOf="@id/imgAirPutih"
@@ -168,6 +175,7 @@
                         android:layout_marginEnd="16dp"
                         android:text="@string/soft_drink_title"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_bold"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -180,6 +188,7 @@
                         android:layout_marginEnd="16dp"
                         android:text="@string/soft_drink_desc"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_regular"
                         app:layout_constraintEnd_toStartOf="@id/imgSoftDrink"
                         app:layout_constraintTop_toBottomOf="@id/tvSoftDrink"
                         app:layout_constraintStart_toStartOf="parent" />
@@ -219,6 +228,7 @@
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:text="@string/minuman_energi_tittle"
+                        android:fontFamily="@font/poppins_bold"
                         android:textColor="@color/black"
                         app:layout_constraintStart_toEndOf="@id/imgMinumanEnergi"
                         app:layout_constraintTop_toTopOf="@+id/imgMinumanEnergi" />
@@ -230,6 +240,7 @@
                         android:layout_marginStart="16dp"
                         android:text="@string/minuman_energi_desc"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_regular"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/imgMinumanEnergi"
                         app:layout_constraintTop_toBottomOf="@id/tvMinumanEnergi"/>
@@ -270,6 +281,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
                         android:text="@string/jus_title"
+                        android:fontFamily="@font/poppins_bold"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -283,6 +295,7 @@
                         android:layout_marginEnd="16dp"
                         android:text="@string/jus_desc"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_regular"
                         app:layout_constraintEnd_toStartOf="@id/imgJus"
                         app:layout_constraintTop_toBottomOf="@id/tvJus"
                         app:layout_constraintStart_toStartOf="parent" />
