@@ -12,6 +12,17 @@
     <string name="soft_drink_desc">Soft drink adalah minuman ringan yang mengandung karbonasi, gula, dan perasa.
         Meskipun menyegarkan, konsumsi berlebihan dapat menyebabkan masalah kesehatan seperti obesitas, diabetes tipe 2, dan kerusakan gigi. Soft drink tinggi kalori, seringkali tanpa nilai gizi, dan
         dapat mengurangi asupan air putih yang penting untuk hidrasi.</string>
+    <string name="minuman_energi_tittle">Minuman Energi</string>
+    <string name="minuman_energi_desc">Minuman energi tidak efektif sebagai sumber hidrasi utama. Kandungan kafeinnya bersifat diuretik,
+        sehingga mempercepat pengeluaran cairan dari tubuh. Selain itu, gula yang tinggi dapat menghambat penyerapan cairan dengan baik.
+        Minuman ini lebih cocok untuk tambahan energi, bukan pengganti air putih. Untuk hidrasi harian, air putih atau minuman elektrolit tetap lebih disarankan.</string>
+    <string name="jus_title">Minuman Jus</string>
+    <string name="jus_desc">Jus buah dapat memberikan kontribusi hidrasi harian karena mengandung air yang cukup tinggi.
+        Selain itu, jus kaya akan vitamin, mineral, dan antioksidan yang bermanfaat untuk kesehatan.
+        Namun, kandungan gula, baik alami maupun tambahan, dapat mempengaruhi keseimbangan cairan.
+        Oleh karena itu, jus sebaiknya tidak dijadikan pengganti air putih untuk hidrasi utama. Untuk manfaat optimal,
+        pilih jus tanpa tambahan gula dan konsumsi dalam jumlah moderat.</string>
+
 
     <string name="tv_splash">Selamat datang di, <i>HydrateYou</i></string>
     <string name="tv_heading">Selamat Datang!!</string>

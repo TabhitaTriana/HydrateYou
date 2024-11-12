@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/tv_create_acc"
-        android:textSize="32dp"
+        android:textSize="32sp"
         android:layout_marginTop="40dp"
         android:textColor="@color/black"
         android:textStyle="bold"/>

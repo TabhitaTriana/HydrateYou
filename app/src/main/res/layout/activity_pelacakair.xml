@@ -13,7 +13,9 @@
         android:layout_height="36dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="32dp"
-        android:text="Hari ini"
+        android:fontFamily="@font/righteous"
+        android:text="@string/hari_ini"
+        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,70 +25,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:text="14 November 2024"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/black"
+        android:text="@string/_14_november_2024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="128dp"
-        android:text="25 ml"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="25dp"
-        android:text="50 ml"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="25dp"
-        android:text="100 ml"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="148dp"
-        android:text="200 ml"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="20dp"
-        android:text="300 ml"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="20dp"
-        android:text="400 ml"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <Button
         android:id="@+id/button"
@@ -95,7 +38,8 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="108dp"
         android:backgroundTint="@color/blue_DDF"
-        android:text="14 Nov"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/_14_nov"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -106,7 +50,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="108dp"
         android:backgroundTint="@color/blue_DDF"
-        android:text="15 Nov"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/_15_nov"
         app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -117,7 +62,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="108dp"
         android:backgroundTint="@color/blue_DDF"
-        android:text="16 Nov"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/_16_nov"
         app:layout_constraintStart_toEndOf="@+id/button2"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -128,7 +74,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="108dp"
         android:backgroundTint="@color/blue_DDF"
-        android:text="17 Nov"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/_17_nov"
         app:layout_constraintStart_toEndOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -139,7 +86,8 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="108dp"
         android:backgroundTint="@color/blue_DDF"
-        android:text="18 Nov"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/_18_nov"
         app:layout_constraintStart_toEndOf="@+id/button4"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -149,7 +97,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/blue_DDF"
-        android:text="Pelacak Air"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/pelacak_air"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button5" />
 
@@ -157,40 +106,10 @@
         android:id="@+id/imageView"
         android:layout_width="78dp"
         android:layout_height="81dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button6"
-        app:srcCompat="@drawable/ic_air_putih" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="78dp"
-        android:layout_height="81dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/button6"
-        app:srcCompat="@drawable/ic_air_putih" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="78dp"
-        android:layout_height="81dp"
-        android:layout_marginStart="-178dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/button6"
-        app:srcCompat="@drawable/ic_air_putih" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="78dp"
-        android:layout_height="81dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:srcCompat="@drawable/ic_air_putih" />
 
     <ImageView
@@ -198,26 +117,128 @@
         android:layout_width="78dp"
         android:layout_height="81dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintHorizontal_bias="0.082"
         app:layout_constraintStart_toEndOf="@+id/imageView7"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:srcCompat="@drawable/ic_air_putih" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/_300_ml"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="78dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="-178dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/button6"
+        app:srcCompat="@drawable/ic_air_putih" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/_400_ml"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="168dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/black"
+        android:text="@string/_25_ml"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button6" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/black"
+        android:text="@string/_100_ml"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/black"
+        android:text="@string/_50_ml"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="78dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:srcCompat="@drawable/ic_air_putih" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="152dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/_200_ml"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="78dp"
         android:layout_height="81dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:srcCompat="@drawable/ic_air_putih" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="78dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/button6"
         app:srcCompat="@drawable/ic_air_putih" />
 
     <androidx.constraintlayout.widget.Barrier
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:barrierDirection="left" />
+        app:barrierDirection="left"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
