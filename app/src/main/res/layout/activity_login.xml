@@ -6,37 +6,29 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="24dp"
+    android:layout_marginTop="104dp"
     tools:context=".Login">
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/top_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="24dp"
-        app:layout_constraintGuide_end="24dp"/>
 
     <TextView
         android:id="@+id/heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/righteous"
+        android:fontFamily="sans-serif-black"
         android:textColor="@color/black"
-        android:text="@string/welcome_back"
+        android:text="@string/tv_heading"
         android:textSize="32sp"
         android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/top_guideline" />
+        />
 
     <TextView
         android:id="@+id/subheading"
         android:textSize="16sp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/login_to_continue"
+        android:text="@string/tv_subheading"
         android:textColor="@color/black"
-        android:fontFamily="@font/poppins_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/heading" />
@@ -45,8 +37,7 @@
         android:id="@+id/tv_user"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/username"
-        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/tv_user"
         android:textSize="24sp"
         android:textColor="@color/black"
         android:layout_marginTop="40dp"
@@ -58,9 +49,9 @@
         android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/input_your_username"
-        android:fontFamily="@font/poppins_regular"
+        android:background="@drawable/edit_text"
         android:padding="12dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_user"
@@ -70,8 +61,7 @@
         android:id="@+id/tv_pass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/password"
-        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/tv_pass"
         android:textSize="24sp"
         android:textColor="@color/black"
         android:layout_marginTop="16dp"
@@ -83,62 +73,35 @@
         android:id="@+id/password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/input_your_password"
-        android:fontFamily="@font/poppins_regular"
+        android:background="@drawable/edit_text"
         android:padding="12dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_pass"
         android:layout_marginBottom="16dp"/>
 
     <CheckBox
+        android:id="@+id/checkbox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/remember_me"
-        android:fontFamily="@font/poppins_regular"
         android:textSize="16sp"
         android:layout_marginTop="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"/>
 
-    <TextView
-        android:id="@+id/forgot_password"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/forgot_password"
-        android:fontFamily="@font/poppins_regular"
-        android:textSize="16sp"
-        android:layout_marginTop="16sp"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password"/>
-
     <Button
         android:id="@+id/login"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:text="@string/log_in"
-        android:fontFamily="@font/righteous"
+        android:textSize="24sp"
         android:layout_marginTop="32dp"
-        android:backgroundTint="#164863"
-        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/blue_164"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/forgot_password" />
-
-
-    <TextView
-        android:id="@+id/tv_sign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/don_t_have_an_account_sign_in"
-        android:fontFamily="@font/poppins_semibolditalic"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login"
-        android:layout_marginTop="16dp"/>
+        app:layout_constraintTop_toBottomOf="@id/checkbox" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

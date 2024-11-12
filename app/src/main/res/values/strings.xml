@@ -24,15 +24,29 @@
         pilih jus tanpa tambahan gula dan konsumsi dalam jumlah moderat.</string>
 
 
-    <string name="tv_heading">Welcome Back!</string>
-    <string name="tv_subheading">login to continue</string>
-    <string name="tv_user">username</string>
+    <string name="tv_splash">Selamat datang di, <i>HydrateYou</i></string>
+    <string name="tv_heading">Selamat Datang!!</string>
+    <string name="tv_subheading">Masuk untuk memulai</string>
+    <string name="tv_user">Nama Pengguna</string>
     <string name="tv_input_user">input your username</string>
-    <string name="tv_pass">password</string>
+    <string name="tv_pass">Kata Sandi</string>
     <string name="tv_input_pass">input your password</string>
-    <string name="remember_me">remember me?</string>
+    <string name="remember_me">ingat saya?</string>
     <string name="forgot_password">Forgot Password?</string>
-    <string name="log_in">Log In</string>
-    <string name="account">Don\'t have an account? <b>Sign in</b></string>
+    <string name="log_in">Masuk</string>
+    <string name="tv_pengingat_minum">Sudah minum air hari ini?</string>
+    <string name="tv_pengingat_panjang">Yuk, jangan lupa untuk minum air sekarang! Hidrasi yang baik penting untuk menjaga fokus dan energimu sepanjang hari.</string>
+    <string name="tv_create_acc">Buat Akun Baru</string>
+    <string name="tv_email">Email</string>
+    <string name="daftar">Daftar</string>
+    <string name="re_password">Ulangi Kata Sandi</string>
+    <string name="ok">Ok</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="selesai">Selesai</string>
+    <string name="nama">Nama</string>
+    <string name="usia">Usia</string>
+    <string name="berat_badan">Berat Badan</string>
+    <string name="isi_usia">11 tahun</string>
+    <string name="tinggi_badan">Tinggi Badan</string>
 
 </resources>
