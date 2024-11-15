@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace = "com.example.hydrateyou"
-    compileSdk = 27
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.hydrateyou"
-        minSdk = 27
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -47,10 +47,14 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
 }
 
-dependencies {
 
+
+dependencies {
+    implementation ("androidx.activity:activity-ktx:1.9.3")
+    implementation ("androidx.core:core-ktx:1.15.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -70,4 +74,14 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+//    implementation("androidx.core:core-ktx:1.9.0")
+//
+//    configurations.all {
+//        resolutionStrategy {
+//            force("androidx.core:core:1.9.0") // Enforce specific version
+//        }
+//    }
+//
+//    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }

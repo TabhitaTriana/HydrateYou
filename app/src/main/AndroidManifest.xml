@@ -22,10 +22,10 @@
             android:name=".EditProfile"
             android:exported="false" />
         <activity
-            android:name=".ui.theme.PengingatMinum"
+            android:name=".PengingatMinum"
             android:exported="false" />
         <activity
-            android:name=".activity_dashboard"
+            android:name=".dashboard"
             android:exported="false" />
         <activity
             android:name=".SignUp"
