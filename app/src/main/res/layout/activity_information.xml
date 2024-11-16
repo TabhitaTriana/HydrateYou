@@ -109,7 +109,7 @@
                         android:id="@+id/imgAirPutih"
                         android:layout_width="100dp"
                         android:layout_height="130dp"
-                        android:src="@drawable/rill_airPutih"
+                        android:src="@drawable/rill_airputih"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -216,7 +216,7 @@
                         android:id="@+id/imgMinumanEnergi"
                         android:layout_width="130dp"
                         android:layout_height="140dp"
-                        android:src="@drawable/minumanEnergi"
+                        android:src="@drawable/minumanenergi"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -271,7 +271,7 @@
                         android:layout_width="130dp"
                         android:layout_height="150dp"
                         android:layout_marginTop="20dp"
-                        android:src="@drawable/Juzzz"
+                        android:src="@drawable/juzzz"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
