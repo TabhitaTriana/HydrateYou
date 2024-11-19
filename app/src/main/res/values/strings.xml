@@ -166,6 +166,7 @@
     <string name="tittle_dashboard">Dashboard</string>
     <string name="tv_KonsumAir">Konsumsi air harian kamu!</string>
     <string name="tittle_KonsumBulanan">Konsumsi air bulanan kamu!</string>
+    <string name="gapunyaakun">Belum punya akun? <b>Daftar</b></string>
 
 
 </resources>
