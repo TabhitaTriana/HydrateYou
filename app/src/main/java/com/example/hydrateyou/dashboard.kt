@@ -1,32 +1,42 @@
 package com.example.hydrateyou
 
 import android.os.Bundle
+import android.widget.ProgressBar
+import android.view.View
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.github.mikephil.charting.charts.PieChart
-import com.github.mikephil.charting.data.PieData
-import com.github.mikephil.charting.data.PieDataSet
-import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.utils.ColorTemplate
+import com.github.mikephil.charting.charts.BarChart
+import com.github.mikephil.charting.data.BarData
+import com.github.mikephil.charting.data.BarDataSet
+import com.github.mikephil.charting.data.BarEntry
 
 class dashboard : AppCompatActivity() {
+
+    private lateinit var progressBar: ProgressBar
+    private lateinit var barChart: BarChart
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        // Inisialisasi PieChart
-        val pieChart: PieChart = findViewById(R.id.pieChart)
+        progressBar = findViewById(R.id.progressBar)
 
-        // Buat dataset dan data entries
-        val entries = listOf(
-            PieEntry(40f, "Category 1"),
-            PieEntry(30f, "Category 2"),
-            PieEntry(30f, "Category 3")
-        )
-        val dataSet = PieDataSet(entries, "Categories")
+        barChart = findViewById(R.id.chartKonsumBulanan);
+        barChart.visibility = View.VISIBLE
+
+        val entries = ArrayList<BarEntry>()
+        entries.add(BarEntry(0f, 3f))
+        entries.add(BarEntry(1f, 4f))
+        entries.add(BarEntry(3f, 6f))
+
+        Log.d("BarChart", "Data entries: $entries")
+
+        val dataSet = BarDataSet(entries, "Konsumsi Air Bulanan")
         dataSet.colors = ColorTemplate.MATERIAL_COLORS.toList()
 
-        val data = PieData(dataSet)
-        pieChart.data = data
-        pieChart.invalidate() // Refresh chart
-    }
+        val data = BarData(dataSet)
+        barChart.data = data
+        barChart.invalidate()
+     }
 }
