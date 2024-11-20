@@ -19,6 +19,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ImageButton
+                android:id="@+id/backButtoninfo"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_back"
+                android:backgroundTint="@color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintMarginTop="24dp"
+                android:onClick="pindah"/>
+
             <!-- Title -->
             <TextView
                 android:id="@+id/tvTitle1"
@@ -29,8 +40,8 @@
                 android:textSize="32sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/righteous"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStarOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/backButtoninfo" />
 
             <TextView
                 android:id="@+id/tvTitle2"
@@ -108,8 +119,8 @@
                     <ImageView
                         android:id="@+id/imgAirPutih"
                         android:layout_width="100dp"
-                        android:layout_height="130dp"
-                        android:src="@drawable/rill_airputih"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/airputihrill"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -162,7 +173,7 @@
                     <ImageView
                         android:id="@+id/imgSoftDrink"
                         android:layout_width="130dp"
-                        android:layout_height="150dp"
+                        android:layout_height="match_parent"
                         android:layout_marginTop="16dp"
                         android:src="@drawable/ic_soft_drink"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -215,7 +226,7 @@
                     <ImageView
                         android:id="@+id/imgMinumanEnergi"
                         android:layout_width="130dp"
-                        android:layout_height="140dp"
+                        android:layout_height="280dp"
                         android:src="@drawable/minumanenergi"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -269,9 +280,9 @@
                     <ImageView
                         android:id="@+id/imgJus"
                         android:layout_width="130dp"
-                        android:layout_height="150dp"
+                        android:layout_height="match_parent"
                         android:layout_marginTop="20dp"
-                        android:src="@drawable/juzzz"
+                        android:src="@drawable/juzzzz"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
