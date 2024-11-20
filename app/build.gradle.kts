@@ -53,37 +53,29 @@ android {
 
 
 dependencies {
-    implementation ("androidx.activity:activity-ktx:1.9.3")
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
-    implementation("com.github.PhilJay:MPAndroidChart:v3.0.3")
+    // AndroidX libraries
+    implementation("androidx.activity:activity-ktx:1.9.3")
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation("androidx.compose.material3:material3:1.1.1")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
+    // Compose and UI
+    implementation(platform("androidx.compose:compose-bom:2024.10.00"))
+    implementation("androidx.compose.ui:ui:1.5.3")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.5.3")
+    implementation("androidx.cardview:cardview:1.0.0")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.5.3")
+
+    // External libraries
+    implementation("com.github.PhilJay:MPAndroidChart:3.0.3")
     implementation("com.mikhaellopez:circularprogressbar:3.0.3")
 
-
-//    implementation("androidx.core:core-ktx:1.9.0")
-//
-//    configurations.all {
-//        resolutionStrategy {
-//            force("androidx.core:core:1.9.0") // Enforce specific version
-//        }
-//    }
-//
-//    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+    // Testing libraries
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.5.3")
+    debugImplementation("androidx.compose.ui:ui-test-manifest:1.5.3")
 }
