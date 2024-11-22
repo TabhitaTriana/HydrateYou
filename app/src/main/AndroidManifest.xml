@@ -1,3 +1,5 @@
+
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -11,7 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HydrateYou"
         tools:targetApi="31">
-
+        <activity
+            android:name=".PengingatTidurActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PelacakAirActivity"
+            android:exported="false" />
         <activity
             android:name=".KebijakanPrivasi"
             android:exported="false" />
@@ -22,22 +29,17 @@
             android:name=".EditProfile"
             android:exported="false" />
         <activity
-            android:name=".PengingatMinum"
+            android:name=".ui.theme.PengingatMinum"
             android:exported="false" />
         <activity
-            android:name=".dashboard"
+            android:name=".activity_dashboard"
             android:exported="false" />
         <activity
             android:name=".SignUp"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".Information"
             android:exported="false" />
@@ -49,8 +51,13 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.HydrateYou">
-            <!-- Intent filter for MainActivity removed -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
 </manifest>
+
