@@ -67,10 +67,10 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview:1.5.3")
     implementation("androidx.cardview:cardview:1.0.0")
     debugImplementation("androidx.compose.ui:ui-tooling:1.5.3")
-
+    implementation ("com.google.android.material:material:1.9.0")
     // External libraries
     implementation("com.github.PhilJay:MPAndroidChart:3.0.3")
-    implementation("com.mikhaellopez:circularprogressbar:3.0.3")
+//    implementation("com.mikhaellopez:circularprogressbar:3.0.3")
 
     // Testing libraries
     testImplementation("junit:junit:4.13.2")
