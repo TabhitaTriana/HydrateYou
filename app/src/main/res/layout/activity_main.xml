@@ -22,16 +22,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
-
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="200dp"
         android:indeterminate="false"
         android:layout_height="200dp"
-        android:max="100"
-        android:progress="75"
+        android:max="2000"
         android:layout_marginTop="20dp"
         android:progressDrawable="@drawable/circular_progressbar"
         android:progressTint="@color/blue_427"
@@ -50,6 +47,19 @@
         android:layout_marginStart="28dp"
         app:layout_constraintTop_toTopOf="@+id/progressBar"
         app:layout_constraintStart_toEndOf="@id/progressBar"/>
+
+    <TextView
+        android:id="@+id/waterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 ml / 2000 ml"
+        android:textSize="16sp"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="44dp"
+        app:layout_constraintTop_toBottomOf="@id/tvkonsumAir"
+        app:layout_constraintStart_toEndOf="@+id/progressBar" />
 
     <TextView
         android:id="@+id/tv_tittleKonsumBulanan"
