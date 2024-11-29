@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "401594996569",
+    "project_id": "trackread-aded1",
+    "storage_bucket": "trackread-aded1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401594996569:android:d9c948be2d49710a229e48",
+        "android_client_info": {
+          "package_name": "com.example.trackread"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrS4d6w8FL3h7EWSUa0et_1AOSdY5ZU_Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
