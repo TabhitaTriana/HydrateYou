@@ -1,21 +1,22 @@
 {
   "project_info": {
-    "project_number": "401594996569",
-    "project_id": "trackread-aded1",
-    "storage_bucket": "trackread-aded1.firebasestorage.app"
+    "project_number": "149520301847",
+    "firebase_url": "https://hydrateyou-561e0-default-rtdb.firebaseio.com",
+    "project_id": "hydrateyou-561e0",
+    "storage_bucket": "hydrateyou-561e0.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:401594996569:android:d9c948be2d49710a229e48",
+        "mobilesdk_app_id": "1:149520301847:android:5a8b956c0b281515618152",
         "android_client_info": {
-          "package_name": "com.example.trackread"
+          "package_name": "com.example.hydrateyou"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBrS4d6w8FL3h7EWSUa0et_1AOSdY5ZU_Y"
+          "current_key": "AIzaSyDIUS8JS0I3qWDS7YJ-Y0O8fqELadRV6aY"
         }
       ],
       "services": {

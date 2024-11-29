@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.database.FirebaseDatabase
 
 class PelacakAirActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +19,12 @@ class PelacakAirActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // Initialize Firebase
+        val database = FirebaseDatabase.getInstance()
+        val userId = "userId123"
+        val userRef = database.getReference("message")
+
         val imageButton1 = findViewById<ImageButton>(R.id.ImageButton1)
         val imageButton2 = findViewById<ImageButton>(R.id.Avatar1)
         val imageButton3 = findViewById<ImageButton>(R.id.ImageButton3)
@@ -26,26 +33,36 @@ class PelacakAirActivity : AppCompatActivity() {
         val imageButton6 = findViewById<ImageButton>(R.id.ImageButton6)
 
         imageButton1.setOnClickListener {
-            sendWaterAmount(25)
+            sendWaterAmount(25,userRef)
         }
         imageButton2.setOnClickListener {
-            sendWaterAmount(50)
+            sendWaterAmount(50,userRef)
         }
         imageButton3.setOnClickListener {
-            sendWaterAmount(100)
+            sendWaterAmount(100,userRef)
         }
         imageButton4.setOnClickListener {
-            sendWaterAmount(200)
+            sendWaterAmount(200,userRef)
         }
         imageButton5.setOnClickListener {
-            sendWaterAmount(300)
+            sendWaterAmount(300,userRef)
         }
         imageButton6.setOnClickListener {
-            sendWaterAmount(400)
+            sendWaterAmount(400,userRef)
         }
 
+
     }
-    private fun sendWaterAmount(amount: Int) {
+    private fun sendWaterAmount(amount: Int) {6
+
+        userRef.get().addOnSuccessListener { snapshot ->
+            val currentWater = snapshot.child("dailyWater").value
+            val updatedWater = currentWater.toString().toInt() + amount
+            userRef.setValue(updatedWater)
+        }.addOnFailureListener {
+            it.printStackTrace()
+        }
+
         val intent = Intent(this, MainActivity::class.java)
         intent.putExtra("EXTRA_WATER_AMOUNT", amount)
         startActivity(intent)

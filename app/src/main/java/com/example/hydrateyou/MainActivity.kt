@@ -11,6 +11,11 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.utils.ColorTemplate
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +29,36 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Initialize Firebase
+        val database = FirebaseDatabase.getInstance()
+        val userId = "userId123"
+        val userRef = database.getReference("users/$userId/dailyWater")
+
+        // Initialize views
+        progressBar = findViewById(R.id.progressBar)
+        waterTextView = findViewById(R.id.waterTextView)
+        progressBar.max = maxWater
+
+        // Write a message to the database
+        userRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val dailyWater = dataSnapshot.getValue(Int::class.java)
+                Log.d("Firebase", "Jumlah air yang dikonsumsi hari ini: $dailyWater")
+            }
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("Firebase", "Failed to read value.", error.toException())
+            }
+        })
+                // Read data from the database
+                userRef.get().addOnSuccessListener { snapshot ->
+                    val dailyWater = snapshot.child("dailyWater").value
+                    Log.d("Firebase", "Jumlah air yang dikonsumsi hari ini: $dailyWater")
+                }
+        val extraWaterAmount = intent.getIntExtra("EXTRA_WATER_AMOUNT", 0)
+        if (extraWaterAmount > 0){
+            updateWaterProgress(extraWaterAmount)
+        }
 
         barChart = findViewById(R.id.chartKonsumBulanan);
         barChart.visibility = View.VISIBLE
@@ -61,15 +96,15 @@ class MainActivity : AppCompatActivity() {
         if (extraWaterAmount > 0) {
             updateWaterProgress(extraWaterAmount)
         }
+
+        FirebaseApp.initializeApp(this)
     }
 
     private fun updateWaterProgress(additionalWater: Int) {
         currentWater += additionalWater
-
         if (currentWater > maxWater) {
             currentWater = maxWater
         }
-
         progressBar.progress = currentWater
         waterTextView.text = "$currentWater ml / $maxWater ml"
 
