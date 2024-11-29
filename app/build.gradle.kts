@@ -1,11 +1,12 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
     namespace = "com.example.hydrateyou"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.hydrateyou"
@@ -71,6 +72,10 @@ dependencies {
     // External libraries
     implementation("com.github.PhilJay:MPAndroidChart:3.0.3")
 //    implementation("com.mikhaellopez:circularprogressbar:3.0.3")
+
+    //Firebase
+    implementation("com.google.firebase:firebase-database:20.2.2")
+    implementation("com.google.firebase:firebase-analytics:21.4.0")
 
     // Testing libraries
     testImplementation("junit:junit:4.13.2")
