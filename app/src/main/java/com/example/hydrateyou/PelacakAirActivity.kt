@@ -7,13 +7,22 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class PelacakAirActivity : AppCompatActivity() {
+
+    private lateinit var userRef: DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_pelacak_air)
+
+        // Handle edge-to-edge display
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -22,9 +31,10 @@ class PelacakAirActivity : AppCompatActivity() {
 
         // Initialize Firebase
         val database = FirebaseDatabase.getInstance()
-        val userId = "userId123"
-        val userRef = database.getReference("message")
+        val userId = "userId123" // Ganti dengan user ID dinamis jika perlu
+        userRef = database.getReference("users/$userId/dailyWater")
 
+        // Initialize buttons
         val imageButton1 = findViewById<ImageButton>(R.id.ImageButton1)
         val imageButton2 = findViewById<ImageButton>(R.id.Avatar1)
         val imageButton3 = findViewById<ImageButton>(R.id.ImageButton3)
@@ -32,39 +42,38 @@ class PelacakAirActivity : AppCompatActivity() {
         val imageButton5 = findViewById<ImageButton>(R.id.ImageButton5)
         val imageButton6 = findViewById<ImageButton>(R.id.ImageButton6)
 
-        imageButton1.setOnClickListener {
-            sendWaterAmount(25,userRef)
-        }
-        imageButton2.setOnClickListener {
-            sendWaterAmount(50,userRef)
-        }
-        imageButton3.setOnClickListener {
-            sendWaterAmount(100,userRef)
-        }
-        imageButton4.setOnClickListener {
-            sendWaterAmount(200,userRef)
-        }
-        imageButton5.setOnClickListener {
-            sendWaterAmount(300,userRef)
-        }
-        imageButton6.setOnClickListener {
-            sendWaterAmount(400,userRef)
-        }
-
-
+        // Set click listeners for buttons
+        imageButton1.setOnClickListener { sendWaterAmount(25) }
+        imageButton2.setOnClickListener { sendWaterAmount(50) }
+        imageButton3.setOnClickListener { sendWaterAmount(100) }
+        imageButton4.setOnClickListener { sendWaterAmount(200) }
+        imageButton5.setOnClickListener { sendWaterAmount(300) }
+        imageButton6.setOnClickListener { sendWaterAmount(400) }
     }
-    private fun sendWaterAmount(amount: Int) {6
 
-        userRef.get().addOnSuccessListener { snapshot ->
-            val currentWater = snapshot.child("dailyWater").value
-            val updatedWater = currentWater.toString().toInt() + amount
-            userRef.setValue(updatedWater)
-        }.addOnFailureListener {
-            it.printStackTrace()
-        }
+    private fun sendWaterAmount(amount: Int) {
+        // Get current water value
+        userRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val currentWater = snapshot.getValue(Int::class.java) ?: 0
+                val updatedWater = currentWater + amount
 
-        val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("EXTRA_WATER_AMOUNT", amount)
-        startActivity(intent)
+                // Set updated water value
+                userRef.setValue(updatedWater)
+                    .addOnSuccessListener {
+                        // Redirect to MainActivity
+                        val intent = Intent(this@PelacakAirActivity, MainActivity::class.java)
+                        intent.putExtra("EXTRA_WATER_AMOUNT", amount)
+                        startActivity(intent)
+                    }
+                    .addOnFailureListener { exception ->
+                        exception.printStackTrace()
+                    }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                error.toException().printStackTrace()
+            }
+        })
     }
 }

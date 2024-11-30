@@ -50,11 +50,7 @@ class MainActivity : AppCompatActivity() {
                 Log.e("Firebase", "Failed to read value.", error.toException())
             }
         })
-                // Read data from the database
-                userRef.get().addOnSuccessListener { snapshot ->
-                    val dailyWater = snapshot.child("dailyWater").value
-                    Log.d("Firebase", "Jumlah air yang dikonsumsi hari ini: $dailyWater")
-                }
+
         val extraWaterAmount = intent.getIntExtra("EXTRA_WATER_AMOUNT", 0)
         if (extraWaterAmount > 0){
             updateWaterProgress(extraWaterAmount)
@@ -78,24 +74,8 @@ class MainActivity : AppCompatActivity() {
         barChart.invalidate()
 
         progressBar = findViewById(R.id.progressBar)
-        progressBar.max = 2000
-
-        // menerima data dari PelacakAirActivity
-        val additionalWater = intent.getIntExtra("EXTRA_WATER_AMOUNT", 0)
-
-        // update progress bar
-        val currentProgress = progressBar.progress
-        progressBar.progress = (currentProgress + additionalWater).coerceAtMost(progressBar.max)
-
-        progressBar = findViewById(R.id.progressBar)
         waterTextView = findViewById(R.id.waterTextView)
-
         progressBar.max = maxWater
-        // cek data yg dikirim dari activity pelacak air activity
-        val extraWaterAmount = intent.getIntExtra("EXTRA_WATER_AMOUNT", 0)
-        if (extraWaterAmount > 0) {
-            updateWaterProgress(extraWaterAmount)
-        }
 
         FirebaseApp.initializeApp(this)
     }
