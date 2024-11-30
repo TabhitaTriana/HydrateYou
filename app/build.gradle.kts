@@ -77,6 +77,8 @@ dependencies {
     implementation("com.google.firebase:firebase-database:20.2.2")
     implementation("com.google.firebase:firebase-analytics:21.4.0")
     implementation ("com.google.firebase:firebase-bom:32.2.3")
+    implementation ("com.google.firebase:firebase-auth:23.1.0")
+
 
     // Testing libraries
     testImplementation("junit:junit:4.13.2")
