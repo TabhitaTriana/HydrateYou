@@ -38,10 +38,13 @@ class SignUp : AppCompatActivity() {
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             // Pengguna berhasil terdaftar
-                            val user = auth.currentUser
                             Toast.makeText(this, "Akun berhasil dibuat!", Toast.LENGTH_SHORT).show()
-                            // Arahkan ke halaman login setelah berhasil daftar
-                            startActivity(Intent(this, Login::class.java))
+                            // Arahkan ke halaman EditProfile
+                            val intent = Intent(this, EditProfile::class.java).apply {
+                                putExtra("email", email)
+                                putExtra("nama", nama)
+                            }
+                            startActivity(intent)
                             finish()
                         } else {
                             // Jika gagal
