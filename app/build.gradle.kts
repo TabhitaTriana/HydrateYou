@@ -76,6 +76,7 @@ dependencies {
 
     // External libraries
     implementation("com.github.PhilJay:MPAndroidChart:3.0.3")
+    // implementation("com.mikhaellopez:circularprogressbar:3.0.3") // Hapus jika tidak digunakan
 
     // Firebase
     implementation("com.google.firebase:firebase-database:20.2.2")
@@ -90,11 +91,11 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.5.3")
 }
 
-// Aturan resolusi dependensi
+// Aturan resolusi dependensi (dengan sintaks Kotlin yang benar)
 configurations.all {
     resolutionStrategy {
-        // Paksa semua modul menggunakan versi yang sama untuk androidx.lifecycle
+        force("androidx.appcompat:appcompat:1.6.1")
+        force("androidx.core:core-ktx:1.12.0")
         force("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
-        force("androidx.lifecycle:lifecycle-runtime:2.6.2")
     }
 }
