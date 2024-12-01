@@ -8,7 +8,7 @@
         />
     <item
         android:id="pelacak_air"
-        android:title="@string/pelacak_air"
+        android:title="@string/pelacak_air_per_hari"
         android:icon="@drawable/water"
         />
     <item
