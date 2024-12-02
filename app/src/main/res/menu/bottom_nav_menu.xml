@@ -2,26 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/information"
+        android:id="@+id/bottom_information"
         android:title="@string/information"
         android:icon="@drawable/information"
         />
     <item
-        android:id="pelacak_air"
+        android:id="@+id/bottom_water"
         android:title="@string/pelacak_air_per_hari"
         android:icon="@drawable/water"
         />
     <item
-        android:id="@+id/home"
+        android:id="@+id/bottom_home"
         android:title="@string/home"
         android:icon="@drawable/home"/>
     <item
-        android:id="@+id/challenge"
+        android:id="@+id/bottom_challenge"
         android:title="@string/challenge"
         android:icon="@drawable/challenge"
         />
     <item
-        android:id="@+id/profile"
+        android:id="@+id/bottom_profile"
         android:title="@string/profile"
         android:icon="@drawable/profile"
         />

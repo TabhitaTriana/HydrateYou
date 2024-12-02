@@ -2,14 +2,16 @@ package com.example.hydrateyou
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button // Gunakan tipe yang sesuai
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class Profile : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -41,10 +43,46 @@ class Profile : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // Handle edge-to-edge display
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        // Bottom Navigation setup
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
+        bottomNavigationView.selectedItemId = R.id.bottom_profile // Select the profile item by default
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.bottom_home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    finish()
+                    true
+                }
+                R.id.bottom_information -> {
+                    startActivity(Intent(this, Information::class.java))
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    finish()
+                    true
+                }
+                R.id.bottom_challenge -> {
+                    startActivity(Intent(this, KebijakanPrivasi::class.java))
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    finish()
+                    true
+                }
+                R.id.bottom_water -> {
+                    startActivity(Intent(this, PelacakAirActivity::class.java))
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    finish()
+                    true
+                }
+                R.id.bottom_profile -> true // Already on this screen
+                else -> false
+            }
         }
     }
 }
