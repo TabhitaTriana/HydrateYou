@@ -27,6 +27,11 @@
             android:name=".KebijakanPrivasi"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true" />
+       <activity
+            android:name=".ChallengeActivity"
+            android:exported="false" />
+        <activity
+
         <activity
             android:name=".Profile"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
@@ -68,5 +73,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
