@@ -17,7 +17,7 @@
         android:icon="@drawable/home"/>
     <item
         android:id="@+id/challenge"
-        android:title="@string/challenge"
+        android:title="challenge"
         android:icon="@drawable/challenge"
         />
     <item

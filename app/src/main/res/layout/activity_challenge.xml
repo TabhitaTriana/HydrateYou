@@ -25,11 +25,11 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height=""
+        android:layout_height="wrap_content"
         android:text="1000"
-        android android:background="@drawable/stroke"
         tools:layout_editor_absoluteX="330dp"
-        tools:layout_editor_absoluteY="-3dp" />
+        tools:layout_editor_absoluteY="-3dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/daily_goal"
@@ -39,7 +39,6 @@
         android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="#000"
-        android:background="@drawable/stroke"
         app:layout_constraintTop_toBottomOf="@id/challenge_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

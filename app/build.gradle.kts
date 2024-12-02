@@ -69,6 +69,7 @@ dependencies {
     implementation("androidx.compose.ui:ui:1.5.3")
     implementation("androidx.compose.ui:ui-tooling-preview:1.5.3")
     implementation(libs.firebase.auth)
+    implementation(libs.androidx.activity)
     debugImplementation("androidx.compose.ui:ui-tooling:1.5.3")
 
     // Material Design
