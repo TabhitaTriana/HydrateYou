@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "149520301847",
+    "firebase_url": "https://hydrateyou-561e0-default-rtdb.firebaseio.com",
+    "project_id": "hydrateyou-561e0",
+    "storage_bucket": "hydrateyou-561e0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149520301847:android:5a8b956c0b281515618152",
+        "android_client_info": {
+          "package_name": "com.example.hydrateyou"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIUS8JS0I3qWDS7YJ-Y0O8fqELadRV6aY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
