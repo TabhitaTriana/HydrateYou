@@ -38,7 +38,7 @@
         android:id="@+id/tv_user"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/tv_user"
+        android:text="@string/email"
         android:textSize="24sp"
         android:textColor="@color/black"
         android:layout_marginTop="40dp"
