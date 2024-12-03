@@ -91,6 +91,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.5.3")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.5.3")
+
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 }
 
 // Resolusi dependensi untuk mencegah masalah versi

@@ -12,14 +12,17 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.InputStream
+import java.io.OutputStream
 
 class EditProfile : AppCompatActivity() {
     private lateinit var db: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
     private val PICK_IMAGE_REQUEST = 1
-    private var imageUri: Uri? = null  // Menyimpan Uri gambar yang dipilih
+    private var imageUri: Uri? = null // Menyimpan Uri gambar yang dipilih
 
     private lateinit var namaEditText: EditText
     private lateinit var usiaEditText: EditText
@@ -56,10 +59,23 @@ class EditProfile : AppCompatActivity() {
                         tinggiEditText.setText(userProfile?.tinggiBadan?.toString())
 
                         // Menampilkan gambar profil jika ada
-                        Glide.with(this)
-                            .load(userProfile?.fotoProfil ?: R.drawable.ic_account) // Menampilkan gambar default jika tidak ada URL
-                            .into(profileImageView)
-
+                        val imagePath = userProfile?.fotoProfil
+                        if (imagePath.isNullOrEmpty()) {
+                            // Jika tidak ada gambar, tampilkan gambar default
+                            Glide.with(this)
+                                .load(R.drawable.ic_account) // Gambar default
+                                .circleCrop() // Memastikan gambar berbentuk bulat
+                                .into(profileImageView)
+                        } else {
+                            // Menampilkan gambar dari path yang disimpan
+                            val imageFile = File(imagePath)
+                            if (imageFile.exists()) {
+                                Glide.with(this)
+                                    .load(imageFile)
+                                    .circleCrop() // Memastikan gambar berbentuk bulat
+                                    .into(profileImageView)
+                            }
+                        }
                     }
                 }
                 .addOnFailureListener {
@@ -85,13 +101,17 @@ class EditProfile : AppCompatActivity() {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.data != null) {
             imageUri = data.data
             val profileImageView = findViewById<ImageView>(R.id.profile_img) // Pastikan ini sesuai dengan ID yang kamu pakai
-            profileImageView.setImageURI(imageUri) // Menampilkan gambar yang dipilih
+            // Menampilkan gambar yang dipilih dengan bentuk bulat
+            Glide.with(this)
+                .load(imageUri)
+                .circleCrop() // Memastikan gambar berbentuk bulat
+                .into(profileImageView)
         }
     }
 
     // Fungsi untuk menyimpan data profil di Firestore
-    private fun saveProfileData(photoUrl: String, updatedNama: String, usia: Int, berat: Int, tinggi: Int, email: String) {
-        val userProfile = UserProfile(updatedNama, berat, tinggi, usia, email, photoUrl)
+    private fun saveProfileData(photoPath: String, updatedNama: String, usia: Int, berat: Int, tinggi: Int, email: String) {
+        val userProfile = UserProfile(updatedNama, berat, tinggi, usia, email, photoPath)
 
         auth.currentUser?.uid?.let {
             db.collection("users").document(it).set(userProfile)
@@ -106,24 +126,20 @@ class EditProfile : AppCompatActivity() {
         }
     }
 
-    // Fungsi untuk upload gambar ke Firebase Storage
-    private fun uploadImageToFirebase(imageUri: Uri) {
-        val storageReference: StorageReference = FirebaseStorage.getInstance().reference
-        val fileReference = storageReference.child("profile_pictures/${auth.currentUser?.uid}.jpg")
+    // Fungsi untuk menyimpan gambar di penyimpanan lokal aplikasi
+    private fun saveImageLocally(imageUri: Uri): String? {
+        val fileName = "${auth.currentUser?.uid}_profile.jpg"
+        val file = File(filesDir, fileName) // Simpan di internal storage
 
-        fileReference.putFile(imageUri)
-            .addOnSuccessListener { taskSnapshot ->
-                // Mendapatkan URL gambar yang di-upload
-                taskSnapshot.metadata?.reference?.downloadUrl?.addOnSuccessListener { downloadUri ->
-                    val photoUrl = downloadUri.toString()
-
-                    // Menyimpan data ke Firestore, termasuk URL gambar
-                    saveProfileData(photoUrl, namaEditText.text.toString().trim(), usiaEditText.text.toString().toInt(), beratEditText.text.toString().toInt(), tinggiEditText.text.toString().toInt(), auth.currentUser?.email ?: "")
-                }
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "Gagal meng-upload gambar", Toast.LENGTH_SHORT).show()
-            }
+        try {
+            val inputStream: InputStream? = contentResolver.openInputStream(imageUri)
+            val outputStream: OutputStream = FileOutputStream(file)
+            inputStream?.copyTo(outputStream)
+            return file.absolutePath // Mengembalikan path file yang disimpan
+        } catch (e: IOException) {
+            e.printStackTrace()
+            return null
+        }
     }
 
     // Menangani tombol selesai untuk mengupdate data
@@ -144,8 +160,14 @@ class EditProfile : AppCompatActivity() {
                 val email = currentUser?.email ?: "" // Ambil email
 
                 if (imageUri != null) {
-                    // Upload gambar profil jika ada
-                    uploadImageToFirebase(imageUri!!)
+                    // Simpan gambar lokal dan dapatkan path-nya
+                    val imagePath = saveImageLocally(imageUri!!)
+                    if (imagePath != null) {
+                        // Jika berhasil menyimpan gambar, simpan data ke Firestore
+                        saveProfileData(imagePath, updatedNama, usia, berat, tinggi, email)
+                    } else {
+                        Toast.makeText(this, "Gagal menyimpan gambar!", Toast.LENGTH_SHORT).show()
+                    }
                 } else {
                     // Jika tidak ada gambar, lanjutkan update tanpa gambar
                     saveProfileData("", updatedNama, usia, berat, tinggi, email)

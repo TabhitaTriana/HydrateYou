@@ -2,7 +2,6 @@ package com.example.hydrateyou
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -12,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.io.File
 
 class Profile : AppCompatActivity() {
     private lateinit var db: FirebaseFirestore
@@ -82,22 +82,23 @@ class Profile : AppCompatActivity() {
                         tinggiTextView.text = userProfile?.tinggiBadan?.let { "$it cm" } ?: "-"
                         emailTextView.text = userProfile?.email ?: "Email tidak tersedia"
 
-                        // Menampilkan gambar profil jika ada
-                        Glide.with(this)
-                            .load(userProfile?.fotoProfil)
-                            .into(profileImageView)
-                    } else {
-                        Log.e("Profile", "Dokumen tidak ditemukan")
-                        namaTextView.text = "Gagal memuat data"
+                        // Menampilkan gambar profil dari path lokal jika ada
+                        val imagePath = userProfile?.fotoProfil
+                        if (!imagePath.isNullOrEmpty()) {
+                            val file = File(imagePath)
+                            if (file.exists()) {
+                                // Menampilkan gambar dengan bentuk bulat
+                                Glide.with(this)
+                                    .load(file)
+                                    .circleCrop() // Memastikan gambar berbentuk bulat
+                                    .into(profileImageView)
+                            }
+                        }
                     }
                 }
                 .addOnFailureListener { exception ->
-                    Log.e("Profile", "Gagal memuat data", exception)
                     namaTextView.text = "Gagal memuat data"
                 }
-        } else {
-            Log.e("Profile", "User ID tidak ditemukan")
-            namaTextView.text = "Tidak ada pengguna yang login"
         }
 
         // Tombol Edit Profil
