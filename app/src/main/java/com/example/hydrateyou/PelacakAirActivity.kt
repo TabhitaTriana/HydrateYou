@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -49,6 +50,41 @@ class PelacakAirActivity : AppCompatActivity() {
         imageButton4.setOnClickListener { sendWaterAmount(200) }
         imageButton5.setOnClickListener { sendWaterAmount(300) }
         imageButton6.setOnClickListener { sendWaterAmount(400) }
+
+        // Initialize BottomNavigationView
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
+        bottomNavigationView.selectedItemId = R.id.bottom_water // Pastikan ID ini sesuai dengan menu
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.bottom_home -> {
+                    startActivity(Intent(this, PelacakAirActivity::class.java))
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    finish()
+                    true
+                }
+                R.id.bottom_information -> {
+                    startActivity(Intent(this, Information::class.java))
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    finish()
+                    true
+                }
+                R.id.bottom_challenge -> {
+                    startActivity(Intent(this, KebijakanPrivasi::class.java))
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    finish()
+                    true
+                }
+                R.id.bottom_water -> true
+                R.id.bottom_profile -> {
+                    startActivity(Intent(this, Profile::class.java))
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    finish()
+                    true
+                }
+                else -> false
+            }
+        }
     }
 
     private fun sendWaterAmount(amount: Int) {
