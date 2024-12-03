@@ -58,27 +58,27 @@ class PelacakAirActivity : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.bottom_home -> {
-                    startActivity(Intent(this, PelacakAirActivity::class.java))
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    startActivity(Intent(this, MainActivity::class.java))
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                     finish()
                     true
                 }
                 R.id.bottom_information -> {
                     startActivity(Intent(this, Information::class.java))
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                     finish()
                     true
                 }
                 R.id.bottom_challenge -> {
-                    startActivity(Intent(this, KebijakanPrivasi::class.java))
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    startActivity(Intent(this, ChallengeActivity::class.java))
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                     finish()
                     true
                 }
                 R.id.bottom_water -> true
                 R.id.bottom_profile -> {
                     startActivity(Intent(this, Profile::class.java))
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                     finish()
                     true
                 }

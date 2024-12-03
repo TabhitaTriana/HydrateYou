@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -33,6 +34,41 @@ class Profile : AppCompatActivity() {
         val usiaTextView = findViewById<TextView>(R.id.tv_usia)
         val emailTextView = findViewById<TextView>(R.id.tv_email)
         val profileImageView = findViewById<ImageView>(R.id.account) // ImageView untuk menampilkan foto profil
+
+        // Menyiapkan BottomNavigationView
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
+        bottomNavigationView.selectedItemId = R.id.bottom_profile // Pastikan ID ini sesuai dengan menu
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.bottom_home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    finish()
+                    true
+                }
+                R.id.bottom_information -> {
+                    startActivity(Intent(this, Information::class.java))
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    finish()
+                    true
+                }
+                R.id.bottom_challenge -> {
+                    startActivity(Intent(this, ChallengeActivity::class.java))
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    finish()
+                    true
+                }
+                R.id.bottom_water -> {
+                    startActivity(Intent(this, PelacakAirActivity::class.java))
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    finish()
+                    true
+                }
+                R.id.bottom_profile -> true
+                else -> false
+            }
+        }
 
         val currentUserId = auth.currentUser?.uid
         if (currentUserId != null) {
