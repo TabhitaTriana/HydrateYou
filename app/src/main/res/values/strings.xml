@@ -171,6 +171,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="pelacak_air_per_hari">Pelacak Air Per Hari</string>
+    <string name="info">Informasi Pribadi</string>
 
 
 </resources>
