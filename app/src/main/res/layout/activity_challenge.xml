@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Challenge"
         android:textSize="24sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/righteous"
         android:textColor="#000"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,8 @@
         android:layout_height="wrap_content"
         android:text="2L per hari"
         android:textSize="30sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/righteous"
+        android:textStyle=""
         android:textColor="#000"
         app:layout_constraintTop_toBottomOf="@id/challenge_title"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,6 +66,7 @@
         android:layout_height="wrap_content"
         android:text="Persentase Harian"
         android:textSize="16sp"
+        android:fontFamily="@font/poppins_regular"
         android:textColor="#000"
         app:layout_constraintTop_toBottomOf="@id/daily_goal"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,6 +91,7 @@
         android:layout_height="wrap_content"
         android:text="2L per hari"
         android:textSize="16sp"
+        android:fontFamily="@font/poppins_regular"
         android:textColor="#000"
         app:layout_constraintTop_toBottomOf="@id/daily_progress"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,6 +103,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gabung"
+        android:fontFamily="@font/poppins_regular"
         android:textColor="#FF000000"
         android:backgroundTint="#DDF2FD"
         app:layout_constraintTop_toBottomOf="@id/water_intake"
@@ -114,6 +118,7 @@
         android:layout_height="wrap_content"
         android:text="Sistem Lencana"
         android:textSize="18sp"
+        android:fontFamily="@font/poppins_regular"
         android:textStyle="bold"
         android:textColor="#000"
         app:layout_constraintTop_toBottomOf="@id/add_water_button"
@@ -151,7 +156,8 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"/>
 
-            <TextView
+            <Button
+                android:id="@+id/reward1"
                 android:text="30 hari"
                 android:textSize="12sp"
                 android:textColor="#000"
@@ -178,7 +184,8 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"/>
 
-            <TextView
+            <Button
+                android:id="@+id/reward2"
                 android:text="30 hari"
                 android:textSize="12sp"
                 android:textColor="#000"
@@ -205,7 +212,8 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"/>
 
-            <TextView
+            <Button
+                android:id="@+id/reward3"
                 android:text="30 hari"
                 android:textSize="12sp"
                 android:textColor="#000"

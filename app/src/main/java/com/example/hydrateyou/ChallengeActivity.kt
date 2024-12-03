@@ -31,6 +31,24 @@ class ChallengeActivity : AppCompatActivity() {
             addWater(250, progressBar, waterIntakeText) // Add 250ml water
         }
 
+        // Tombol klaim reward
+        val reward1Button: Button = findViewById(R.id.reward1)
+        val reward2Button: Button = findViewById(R.id.reward2)
+        val reward3Button: Button = findViewById(R.id.reward3)
+
+        reward1Button.setOnClickListener {
+            navigateToReward(1)
+        }
+
+        reward2Button.setOnClickListener {
+            navigateToReward(2)
+        }
+
+        reward3Button.setOnClickListener {
+            navigateToReward(3)
+        }
+
+        // Menyiapkan BottomNavigationView
         // Initialize BottomNavigationView
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
         bottomNavigationView.selectedItemId = R.id.bottom_challenge // Make sure this ID matches the menu item ID
@@ -61,6 +79,13 @@ class ChallengeActivity : AppCompatActivity() {
             Toast.makeText(this, "Congrats! You've reached your daily goal!", Toast.LENGTH_SHORT).show()
         }
         updateProgress(progressBar, waterIntakeText)
+    }
+
+    private fun navigateToReward(rewardId: Int) {
+        val intent = Intent(this, RewardActivity::class.java)
+        intent.putExtra("reward_id", rewardId) // Kirim data ID reward ke RewardActivity
+        startActivity(intent)
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
 
     // Helper function for navigation to other activities
