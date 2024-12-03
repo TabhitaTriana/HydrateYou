@@ -86,6 +86,7 @@
                 android:fontFamily="@font/poppins_semibold"/>
 
             <TextView
+                android:id="@+id/tv_berat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="50 Kg"
@@ -114,6 +115,7 @@
                 android:fontFamily="@font/poppins_semibold" />
 
             <TextView
+                android:id="@+id/tv_tinggi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="150 cm"
@@ -142,6 +144,7 @@
                 android:fontFamily="@font/poppins_semibold" />
 
             <TextView
+                android:id="@+id/tv_usia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/isi_usia"
