@@ -33,7 +33,7 @@ class Profile : AppCompatActivity() {
         val tinggiTextView = findViewById<TextView>(R.id.tv_tinggi)
         val usiaTextView = findViewById<TextView>(R.id.tv_usia)
         val emailTextView = findViewById<TextView>(R.id.tv_email)
-        val profileImageView = findViewById<ImageView>(R.id.account) // ImageView untuk menampilkan foto profil
+        val profileImageView = findViewById<ImageView>(R.id.account)
 
         // Menyiapkan BottomNavigationView
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
@@ -41,38 +41,18 @@ class Profile : AppCompatActivity() {
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.bottom_home -> {
-                    startActivity(Intent(this, MainActivity::class.java))
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    finish()
-                    true
-                }
-                R.id.bottom_information -> {
-                    startActivity(Intent(this, Information::class.java))
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    finish()
-                    true
-                }
-                R.id.bottom_challenge -> {
-                    startActivity(Intent(this, ChallengeActivity::class.java))
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    finish()
-                    true
-                }
-                R.id.bottom_water -> {
-                    startActivity(Intent(this, PelacakAirActivity::class.java))
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    finish()
-                    true
-                }
+                R.id.bottom_home -> navigateTo(MainActivity::class.java)
+                R.id.bottom_information -> navigateTo(Information::class.java)
+                R.id.bottom_challenge -> navigateTo(ChallengeActivity::class.java)
+                R.id.bottom_water -> navigateTo(PelacakAirActivity::class.java)
                 R.id.bottom_profile -> true
                 else -> false
             }
         }
 
         val currentUserId = auth.currentUser?.uid
-        if (currentUserId != null) {
-            db.collection("users").document(currentUserId).get()
+        currentUserId?.let {
+            db.collection("users").document(it).get()
                 .addOnSuccessListener { document ->
                     if (document != null) {
                         val userProfile = document.toObject(UserProfile::class.java)
@@ -82,43 +62,44 @@ class Profile : AppCompatActivity() {
                         tinggiTextView.text = userProfile?.tinggiBadan?.let { "$it cm" } ?: "-"
                         emailTextView.text = userProfile?.email ?: "Email tidak tersedia"
 
-                        // Menampilkan gambar profil dari path lokal jika ada
-                        val imagePath = userProfile?.fotoProfil
-                        if (!imagePath.isNullOrEmpty()) {
+                        // Menampilkan gambar profil
+                        userProfile?.fotoProfil?.let { imagePath ->
                             val file = File(imagePath)
                             if (file.exists()) {
-                                // Menampilkan gambar dengan bentuk bulat
                                 Glide.with(this)
                                     .load(file)
-                                    .circleCrop() // Memastikan gambar berbentuk bulat
+                                    .circleCrop() // Membuat gambar bulat
                                     .into(profileImageView)
                             }
                         }
                     }
                 }
-                .addOnFailureListener { exception ->
+                .addOnFailureListener {
                     namaTextView.text = "Gagal memuat data"
                 }
         }
 
         // Tombol Edit Profil
         editBtn.setOnClickListener {
-            val intent = Intent(this, EditProfile::class.java)
-            startActivity(intent)
+            navigateTo(EditProfile::class.java)
         }
 
         // Tombol Kebijakan Privasi
         kebijakanBtn.setOnClickListener {
-            val intent = Intent(this, KebijakanPrivasi::class.java)
-            startActivity(intent)
+            navigateTo(KebijakanPrivasi::class.java)
         }
 
         // Tombol Keluar
         keluarBtn.setOnClickListener {
             auth.signOut()
-            val intent = Intent(this, Login::class.java)
-            startActivity(intent)
-            finish()
+            navigateTo(Login::class.java, true)
         }
+    }
+
+    private fun navigateTo(activityClass: Class<*>, finish: Boolean = false): Boolean {
+        startActivity(Intent(this, activityClass))
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        if (finish) finish()
+        return true // Return true to indicate successful navigation
     }
 }

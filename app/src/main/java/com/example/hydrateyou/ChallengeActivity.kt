@@ -11,83 +11,63 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ChallengeActivity : AppCompatActivity() {
 
-    private var currentWaterIntake: Int = 0 // Total konsumsi air saat ini (dalam mililiter)
-    private val dailyGoal: Int = 2000 // Target konsumsi harian (dalam mililiter)
+    private var currentWaterIntake: Int = 0 // Current water intake (in milliliters)
+    private val dailyGoal: Int = 2000 // Daily water intake goal (in milliliters)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_challenge)
 
-        // Referensi ke view dari XML
+        // References to views
         val progressBar: ProgressBar = findViewById(R.id.daily_progress)
         val waterIntakeText: TextView = findViewById(R.id.water_intake)
         val addWaterButton: Button = findViewById(R.id.add_water_button)
 
-        // Inisialisasi tampilan
+        // Initialize progress
         updateProgress(progressBar, waterIntakeText)
 
-        // Aksi ketika tombol ditekan
+        // Add water on button click
         addWaterButton.setOnClickListener {
-            addWater(250, progressBar, waterIntakeText) // Tambah 250ml air
+            addWater(250, progressBar, waterIntakeText) // Add 250ml water
         }
 
-        // Menyiapkan BottomNavigationView
+        // Initialize BottomNavigationView
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
-        bottomNavigationView.selectedItemId = R.id.bottom_challenge // Pastikan ID ini sesuai dengan menu
+        bottomNavigationView.selectedItemId = R.id.bottom_challenge // Make sure this ID matches the menu item ID
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.bottom_home -> {
-                    startActivity(Intent(this, Profile::class.java))
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    finish()
-                    true
-                }
-                R.id.bottom_information -> {
-                    startActivity(Intent(this, Information::class.java))
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    finish()
-                    true
-                }
+                R.id.bottom_home -> navigateTo(Profile::class.java)
+                R.id.bottom_information -> navigateTo(Information::class.java)
                 R.id.bottom_challenge -> true
-                R.id.bottom_water -> {
-                    startActivity(Intent(this, PelacakAirActivity::class.java))
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    finish()
-                    true
-                }
-                R.id.bottom_profile -> {
-                    startActivity(Intent(this, Profile::class.java))
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    finish()
-                    true
-                }
+                R.id.bottom_water -> navigateTo(PelacakAirActivity::class.java)
+                R.id.bottom_profile -> navigateTo(Profile::class.java)
                 else -> false
             }
         }
     }
 
+    // Function to update progress bar and water intake text
     private fun updateProgress(progressBar: ProgressBar, waterIntakeText: TextView) {
-        // Hitung persentase konsumsi air
         val progressPercentage = (currentWaterIntake * 100) / dailyGoal
-
-        // Update progress bar
         progressBar.progress = progressPercentage
-
-        // Update teks konsumsi air
-        waterIntakeText.text = "${currentWaterIntake / 1000.0}L dari ${dailyGoal / 1000.0}L"
+        waterIntakeText.text = "${currentWaterIntake / 1000.0}L of ${dailyGoal / 1000.0}L"
     }
 
+    // Function to add water intake
     private fun addWater(amount: Int, progressBar: ProgressBar, waterIntakeText: TextView) {
-        // Tambahkan konsumsi air
         currentWaterIntake += amount
-
-        // Jika konsumsi air melebihi target
         if (currentWaterIntake >= dailyGoal) {
-            Toast.makeText(this, "Selamat! Anda mencapai target harian!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Congrats! You've reached your daily goal!", Toast.LENGTH_SHORT).show()
         }
-
-        // Update tampilan
         updateProgress(progressBar, waterIntakeText)
+    }
+
+    // Helper function for navigation to other activities
+    private fun navigateTo(activityClass: Class<*>, finish: Boolean = false): Boolean {
+        startActivity(Intent(this, activityClass))
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        if (finish) finish()
+        return true
     }
 }

@@ -3,7 +3,6 @@ package com.example.hydrateyou
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +14,7 @@ import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -26,7 +25,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var progressBar: ProgressBar
     private lateinit var waterTextView: TextView
     private lateinit var barChart: BarChart
-
     private var currentWater: Int = 0
     private val maxWater: Int = 2000
 
@@ -34,30 +32,34 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Mengatur padding untuk menghindari sistem bar
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // Inisialisasi Firebase
-        FirebaseApp.initializeApp(this)
-        val database = FirebaseDatabase.getInstance()
-        val userId = "userId123"
-        val userRef = database.getReference("users/$userId/dailyWater")
+        // Cek apakah pengguna sudah login
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser == null) {
+            navigateTo(Login::class.java, true)
+            return
+        }
 
-        // Inisialisasi views
+        // Inisialisasi UI
         progressBar = findViewById(R.id.progressBar)
         waterTextView = findViewById(R.id.waterTextView)
+        barChart = findViewById(R.id.chartKonsumBulanan)
+
         progressBar.max = maxWater
 
-        // Membaca data dari Firebase
+        // Firebase untuk mengambil data air yang diminum
+        val userId = currentUser.uid
+        val userRef = FirebaseDatabase.getInstance().getReference("users/$userId/dailyWater")
+
         userRef.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val dailyWater = dataSnapshot.getValue(Int::class.java) ?: 0
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val dailyWater = snapshot.getValue(Number::class.java)?.toInt() ?: 0
                 updateWaterProgress(dailyWater)
-                Log.d("Firebase", "Jumlah air yang dikonsumsi hari ini: $dailyWater")
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -65,69 +67,45 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        // Cek apakah ada tambahan air dari intent
-        val extraWaterAmount = intent.getIntExtra("EXTRA_WATER_AMOUNT", 0)
-        if (extraWaterAmount > 0) {
-            updateWaterProgress(extraWaterAmount)
+
+        // Set chart
+        val entries = arrayListOf(
+            BarEntry(0f, 3f),
+            BarEntry(1f, 4f),
+            BarEntry(2f, 6f)
+        )
+        val dataSet = BarDataSet(entries, "Konsumsi Air Bulanan").apply {
+            colors = ColorTemplate.MATERIAL_COLORS.toList()
         }
-
-        // Menyiapkan BarChart
-        barChart = findViewById(R.id.chartKonsumBulanan)
-        val entries = ArrayList<BarEntry>().apply {
-            add(BarEntry(0f, 3f))
-            add(BarEntry(1f, 4f))
-            add(BarEntry(2f, 6f))
-        }
-
-        val dataSet = BarDataSet(entries, "Konsumsi Air Bulanan")
-        dataSet.colors = ColorTemplate.MATERIAL_COLORS.toList()
-
-        val data = BarData(dataSet)
-        barChart.data = data
+        barChart.data = BarData(dataSet)
         barChart.invalidate()
 
-        // Menyiapkan BottomNavigationView
+        // Bottom Navigation setup
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
-        bottomNavigationView.selectedItemId = R.id.bottom_home // Pastikan ID ini sesuai dengan menu
+        bottomNavigationView.selectedItemId = R.id.bottom_home
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.bottom_home -> true
-                R.id.bottom_information -> {
-                    startActivity(Intent(this, Information::class.java))
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    finish()
-                    true
-                }
-                R.id.bottom_challenge -> {
-                    startActivity(Intent(this, ChallengeActivity::class.java))
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    finish()
-                    true
-                }
-                R.id.bottom_water -> {
-                    startActivity(Intent(this, PelacakAirActivity::class.java))
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    finish()
-                    true
-                }
-                R.id.bottom_profile -> {
-                    startActivity(Intent(this, Profile::class.java))
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                    finish()
-                    true
-                }
+                R.id.bottom_information -> navigateTo(Information::class.java)
+                R.id.bottom_challenge -> navigateTo(ChallengeActivity::class.java)
+                R.id.bottom_water -> navigateTo(PelacakAirActivity::class.java)
+                R.id.bottom_profile -> navigateTo(Profile::class.java)
                 else -> false
             }
         }
     }
 
-    private fun updateWaterProgress(additionalWater: Int) {
-        currentWater += additionalWater
-        if (currentWater > maxWater) {
-            currentWater = maxWater
-        }
-        progressBar.progress = currentWater
-        waterTextView.text = "$currentWater ml / $maxWater ml"
+    private fun updateWaterProgress(dailyWater: Int) {
+        currentWater = dailyWater
+        progressBar.progress = dailyWater
+        waterTextView.text = "$currentWater / $maxWater ml"
+    }
+
+    private fun navigateTo(activityClass: Class<*>, finish: Boolean = false): Boolean {
+        startActivity(Intent(this, activityClass))
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        if (finish) finish()
+        return true // Return true to indicate successful navigation
     }
 }
