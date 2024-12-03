@@ -1,224 +1,231 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@drawable/bacground_challange">
+    android:background="@color/blue_DDF">
 
-    <!-- Judul -->
+    <!-- Header -->
     <TextView
         android:id="@+id/challenge_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Challenge"
-        android:textSize="24sp"
-        android:fontFamily="@font/righteous"
-        android:textColor="#000"
+        android:textSize="28sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_semibold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:paddingBottom="8dp"/>
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="16dp"/>
 
+    <!-- Daily Goal Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/daily_goal_card"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="12dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/challenge_title">
 
-    <!-- Target Tantangan -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:gravity="center"
+            android:background="@drawable/gradient_background_1">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Persentase Harian"
+                android:textSize="26sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_regular" />
+
+            <ProgressBar
+                android:id="@+id/daily_progress_bar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:progress="75"
+                android:progressDrawable="@drawable/progress_drawable" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2L per hari"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_regular" />
+
+            <Button
+                android:id="@+id/join_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tekan"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/blue_164"
+                android:textColor="@android:color/white"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="10dp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Badge System -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1000"
-        tools:layout_editor_absoluteX="330dp"
-        tools:layout_editor_absoluteY="-3dp"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/daily_goal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2L per hari"
-        android:textSize="30sp"
-        android:fontFamily="@font/righteous"
-        android:textStyle=""
-        android:textColor="#000"
-        app:layout_constraintTop_toBottomOf="@id/challenge_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <!-- Kemajuan Pengguna -->
-    <TextView
-        android:id="@+id/progress_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Persentase Harian"
-        android:textSize="16sp"
-        android:fontFamily="@font/poppins_regular"
-        android:textColor="#000"
-        app:layout_constraintTop_toBottomOf="@id/daily_goal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
-
-    <ProgressBar
-        android:id="@+id/daily_progress"
-        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:progress="75"
-        android:progressTint="#00ADEF"
-        app:layout_constraintTop_toBottomOf="@id/progress_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
-
-    <TextView
-        android:id="@+id/water_intake"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2L per hari"
-        android:textSize="16sp"
-        android:fontFamily="@font/poppins_regular"
-        android:textColor="#000"
-        app:layout_constraintTop_toBottomOf="@id/daily_progress"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
-
-    <Button
-        android:id="@+id/add_water_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gabung"
-        android:fontFamily="@font/poppins_regular"
-        android:textColor="#FF000000"
-        android:backgroundTint="#DDF2FD"
-        app:layout_constraintTop_toBottomOf="@id/water_intake"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
-
-    <!-- Sistem Lencana -->
-    <TextView
-        android:id="@+id/badge_system_title"
+        android:id="@+id/badge_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sistem Lencana"
-        android:textSize="18sp"
-        android:fontFamily="@font/poppins_regular"
-        android:textStyle="bold"
-        android:textColor="#000"
-        app:layout_constraintTop_toBottomOf="@id/add_water_button"
+        android:textSize="28sp"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="16dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintTop_toBottomOf="@id/daily_goal_card"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:paddingBottom="8dp"/>
+        android:layout_marginBottom="16dp"/>
 
-    <!-- Badges -->
-    <LinearLayout
-        android:id="@+id/badge"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/badge_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:weightSum="3"
-        android:layout_marginTop="40dp"
-        app:layout_constraintTop_toBottomOf="@id/badge_system_title">
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/badge_title">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="1"
-            android:gravity="center">
+            android:padding="20dp"
+            android:background="@drawable/gradient_background_1">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/medal_3"/>
-
-            <TextView
-                android:text="3 hari"
-                android:textSize="14sp"
-                android:textColor="#000"
+            <!-- Badge 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:orientation="horizontal"
+                android:paddingVertical="10dp"
+                android:gravity="center_vertical">
 
-            <Button
-                android:id="@+id/reward1"
-                android:text="30 hari"
-                android:textSize="12sp"
-                android:textColor="#000"
+                <ImageView
+                    android:id="@+id/reward1"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/medal_1"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 Hari"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30 XP"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_regular" />
+            </LinearLayout>
+
+            <!-- Badge 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:orientation="horizontal"
+                android:paddingVertical="10dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/reward2"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/medal_2"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7 Hari"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50 XP"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_regular" />
+            </LinearLayout>
+
+            <!-- Badge 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/reward3"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/medal_3"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30 Hari"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100 XP"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_regular" />
+            </LinearLayout>
+
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/medal_2"/>
-
-            <TextView
-                android:text="7 hari"
-                android:textSize="14sp"
-                android:textColor="#000"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
-
-            <Button
-                android:id="@+id/reward2"
-                android:text="30 hari"
-                android:textSize="12sp"
-                android:textColor="#000"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/medal_1"/>
-
-            <TextView
-                android:text="30 hari"
-                android:textSize="14sp"
-                android:textColor="#000"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
-
-            <Button
-                android:id="@+id/reward3"
-                android:text="30 hari"
-                android:textSize="12sp"
-                android:textColor="#000"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
-        </LinearLayout>
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:menu="@menu/bottom_nav_menu"
+        android:layout_height="56dp"
         android:background="@drawable/bottom_background"
+        app:menu="@menu/bottom_nav_menu"
         app:itemIconSize="30dp"
         app:itemIconTint="@drawable/item_selector"
         app:itemRippleColor="@android:color/transparent"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
