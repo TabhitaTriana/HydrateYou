@@ -66,7 +66,7 @@
         <activity
             android:name=".Information"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Login"
             android:exported="true"
