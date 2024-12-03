@@ -83,6 +83,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-storage")
     implementation("com.github.bumptech.glide:glide:4.14.2")
+    implementation(libs.androidx.activity)
     annotationProcessor("com.github.bumptech.glide:compiler:4.14.2")
 
     // Testing libraries
