@@ -10,11 +10,10 @@
 
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="442dp"
         android:layout_height="750dp"
-        android:padding="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="6dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -25,61 +24,60 @@
                 android:id="@+id/backButtoninfo"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/ic_back"
+                android:layout_marginTop="24dp"
                 android:backgroundTint="@color/white"
-                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/ic_back"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="24dp"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <!-- Title -->
             <TextView
                 android:id="@+id/tvTitle1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/righteous"
                 android:text="Kenapa Minum"
                 android:textColor="@color/blue_427"
                 android:textSize="32sp"
                 android:textStyle="bold"
-                android:fontFamily="@font/righteous"
 
-                app:layout_constraintTop_toBottomOf="@id/backButtoninfo"
                 app:layout_constraintStart_toStartOf="@id/backButtoninfo"
-                />
+                app:layout_constraintTop_toBottomOf="@id/backButtoninfo" />
 
 
             <TextView
                 android:id="@+id/tvTitle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/air_putih"
                 android:fontFamily="@font/righteous"
+                android:text="@string/air_putih"
                 android:textColor="@color/blue_427"
                 android:textSize="60sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitle1"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle1" />
 
             <TextView
                 android:id="@+id/tvTitle3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/itu_penting"
                 android:fontFamily="@font/righteous"
+                android:text="@string/itu_penting"
                 android:textColor="@color/blue_427"
                 android:textSize="60sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitle2"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle2" />
 
             <!-- Explanation Section -->
             <TextView
                 android:id="@+id/tvExplanation"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
                 android:padding="16dp"
                 android:text="@string/explanation_air_putih"
                 android:textColor="@color/black"
-                android:fontFamily="@font/poppins_regular"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTitle3" />
@@ -91,14 +89,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="@string/subtitle_perbandingan_kontribusi_hidrasi"
                 android:textColor="@color/black"
-                android:fontFamily="@font/poppins_semibold"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvExplanation" />
-
 
 
             <!-- Air Putih Section -->
@@ -108,10 +105,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
+                android:background="@color/white"
                 android:elevation="4dp"
                 app:cardCornerRadius="8dp"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -133,11 +131,11 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="@string/air_putih_title"
+                        android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:text="@string/air_putih_title"
-                        android:fontFamily="@font/poppins_bold"
-                        android:textColor="@color/black"
                         app:layout_constraintStart_toEndOf="@id/imgAirPutih"
                         app:layout_constraintTop_toTopOf="@id/imgAirPutih" />
 
@@ -146,9 +144,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
+                        android:fontFamily="@font/poppins_regular"
                         android:text="@string/air_putih_desc"
                         android:textColor="@color/black"
-                        android:fontFamily="@font/poppins_regular"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toEndOf="@id/imgAirPutih"
@@ -162,10 +160,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                android:background="@color/white"
                 android:elevation="4dp"
                 app:cardCornerRadius="8dp"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cardAirPutih">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -188,9 +187,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/poppins_bold"
                         android:text="@string/soft_drink_title"
                         android:textColor="@color/black"
-                        android:fontFamily="@font/poppins_bold"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -201,12 +200,12 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/poppins_regular"
                         android:text="@string/soft_drink_desc"
                         android:textColor="@color/black"
-                        android:fontFamily="@font/poppins_regular"
                         app:layout_constraintEnd_toStartOf="@id/imgSoftDrink"
-                        app:layout_constraintTop_toBottomOf="@id/tvSoftDrink"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvSoftDrink" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
@@ -216,10 +215,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
+                android:background="@color/white"
                 android:elevation="4dp"
                 app:cardCornerRadius="8dp"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cardSoftDrink">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -240,11 +240,11 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="@string/minuman_energi_tittle"
+                        android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:text="@string/minuman_energi_tittle"
-                        android:fontFamily="@font/poppins_bold"
-                        android:textColor="@color/black"
                         app:layout_constraintStart_toEndOf="@id/imgMinumanEnergi"
                         app:layout_constraintTop_toTopOf="@+id/imgMinumanEnergi" />
 
@@ -253,12 +253,12 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
+                        android:fontFamily="@font/poppins_regular"
                         android:text="@string/minuman_energi_desc"
                         android:textColor="@color/black"
-                        android:fontFamily="@font/poppins_regular"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/imgMinumanEnergi"
-                        app:layout_constraintTop_toBottomOf="@id/tvMinumanEnergi"/>
+                        app:layout_constraintTop_toBottomOf="@id/tvMinumanEnergi" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -269,10 +269,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                android:background="@color/white"
                 android:elevation="4dp"
                 app:cardCornerRadius="8dp"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cardMinumanEnergi">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -295,8 +296,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
-                        android:text="@string/jus_title"
                         android:fontFamily="@font/poppins_bold"
+                        android:text="@string/jus_title"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -308,12 +309,12 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/poppins_regular"
                         android:text="@string/jus_desc"
                         android:textColor="@color/black"
-                        android:fontFamily="@font/poppins_regular"
                         app:layout_constraintEnd_toStartOf="@id/imgJus"
-                        app:layout_constraintTop_toBottomOf="@id/tvJus"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvJus" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
@@ -325,12 +326,9 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
         app:menu="@menu/bottom_nav_menu"
         android:background="@drawable/bottom_background"
-        app:itemIconSize="30dp"
+        app:itemIconSize="24dp"
         app:itemIconTint="@drawable/item_selector"
         app:itemRippleColor="@android:color/transparent"
         app:labelVisibilityMode="unlabeled"

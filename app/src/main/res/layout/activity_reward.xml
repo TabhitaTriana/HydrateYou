@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_9BB">
+    android:background="@color/blue_DDF">
 
     <!-- Medal Circle -->
     <ImageView
@@ -44,9 +44,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SELAMAT!"
-        android:textSize="24sp"
+        android:textSize="36sp"
         android:textColor="#000000"
         android:textStyle="bold"
+        android:fontFamily="@font/poppins_bold"
         app:layout_constraintTop_toBottomOf="@id/ribbon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,6 +62,7 @@
         android:textSize="16sp"
         android:textColor="#FF000000"
         android:gravity="center"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintTop_toBottomOf="@id/congrats_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +74,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Share"
-        android:backgroundTint="#FF6F61"
+        android:fontFamily="@font/poppins_semibold"
+        android:backgroundTint="@color/blue_164"
         android:textColor="#FFFFFF"
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/points_text"
