@@ -26,6 +26,7 @@ class Profile : AppCompatActivity() {
 
         // Menghubungkan komponen UI ke variabel
         val editBtn = findViewById<Button>(R.id.edit_btn)
+        val infoBtn = findViewById<ImageButton>(R.id.info_btn)
         val kebijakanBtn = findViewById<ImageButton>(R.id.kebijakan_btn)
         val keluarBtn = findViewById<ImageButton>(R.id.keluar_btn)
         val namaTextView = findViewById<TextView>(R.id.tv_user)
@@ -84,7 +85,15 @@ class Profile : AppCompatActivity() {
             navigateTo(EditProfile::class.java)
         }
 
+        infoBtn.setOnClickListener {
+            navigateTo(InfoPribadi::class.java)
+        }
+
         // Tombol Kebijakan Privasi
+        kebijakanBtn.setOnClickListener {
+            navigateTo(KebijakanPrivasi::class.java)
+
+        }// Tombol Kebijakan Privasi
         kebijakanBtn.setOnClickListener {
             navigateTo(KebijakanPrivasi::class.java)
         }
