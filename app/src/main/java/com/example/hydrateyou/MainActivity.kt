@@ -52,14 +52,25 @@ class MainActivity : AppCompatActivity() {
 
         progressBar.max = maxWater
 
+        // Ambil data dari Intent (jika ada)
+        val extraWaterAmount = intent.getIntExtra("EXTRA_WATER_AMOUNT", 0)
+        if (extraWaterAmount > 0) {
+            updateWaterProgress(extraWaterAmount)  // Update progress langsung
+        }
+
         // Firebase untuk mengambil data air yang diminum
-        val userId = currentUser.uid
+        val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
         val userRef = FirebaseDatabase.getInstance().getReference("users/$userId/dailyWater")
 
         userRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val dailyWater = snapshot.getValue(Number::class.java)?.toInt() ?: 0
-                updateWaterProgress(dailyWater)
+                try {
+                    // Ambil nilai sebagai Long dan konversi ke Int
+                    val dailyWater = snapshot.getValue(Long::class.java)?.toInt() ?: 0
+                    updateWaterProgress(dailyWater)
+                } catch (e: Exception) {
+                    Log.e("Firebase", "Error reading dailyWater: ${e.message}")
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {

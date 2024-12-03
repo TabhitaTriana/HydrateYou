@@ -2,11 +2,13 @@ package com.example.hydrateyou
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class PelacakAirActivity : AppCompatActivity() {
@@ -24,10 +26,18 @@ class PelacakAirActivity : AppCompatActivity() {
             insets
         }
 
+        // Cek apakah pengguna sudah login
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser == null) {
+            navigateTo(Login::class.java, true)
+            return
+        }
+
         // Initialize Firebase reference
         val database = FirebaseDatabase.getInstance()
-        val userId = "userId123" // Replace with dynamic user ID
+        val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
         userRef = database.getReference("users/$userId/dailyWater")
+
 
         // Initialize buttons
         val buttonAmounts = mapOf(
@@ -44,6 +54,7 @@ class PelacakAirActivity : AppCompatActivity() {
                 sendWaterAmount(amount)
             }
         }
+
 
         // Initialize BottomNavigationView
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
@@ -62,24 +73,25 @@ class PelacakAirActivity : AppCompatActivity() {
     }
 
     private fun sendWaterAmount(amount: Int) {
-        userRef.addListenerForSingleValueEvent(object : ValueEventListener {
+        userRef.child("dailyWater").addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val currentWater = snapshot.getValue(Int::class.java) ?: 0
+                val currentWater = snapshot.getValue(Long::class.java)?.toInt() ?: 0
                 val updatedWater = currentWater + amount
 
-                userRef.setValue(updatedWater)
+                userRef.child("dailyWater").setValue(updatedWater)
                     .addOnSuccessListener {
+                        Log.d("Firebase", "Successfully updated water amount: $updatedWater")
                         val intent = Intent(this@PelacakAirActivity, MainActivity::class.java)
-                        intent.putExtra("EXTRA_WATER_AMOUNT", amount)
+                        intent.putExtra("EXTRA_WATER_AMOUNT", updatedWater)
                         startActivity(intent)
                     }
                     .addOnFailureListener { exception ->
-                        exception.printStackTrace()
+                        Log.e("Firebase", "Failed to update water amount", exception)
                     }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                error.toException().printStackTrace()
+                Log.e("Firebase", "Failed to read value.", error.toException())
             }
         })
     }
