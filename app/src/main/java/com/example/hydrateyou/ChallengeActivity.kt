@@ -1,11 +1,13 @@
 package com.example.hydrateyou
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ChallengeActivity : AppCompatActivity() {
 
@@ -27,6 +29,41 @@ class ChallengeActivity : AppCompatActivity() {
         // Aksi ketika tombol ditekan
         addWaterButton.setOnClickListener {
             addWater(250, progressBar, waterIntakeText) // Tambah 250ml air
+        }
+
+        // Menyiapkan BottomNavigationView
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
+        bottomNavigationView.selectedItemId = R.id.bottom_challenge // Pastikan ID ini sesuai dengan menu
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.bottom_home -> {
+                    startActivity(Intent(this, Profile::class.java))
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    finish()
+                    true
+                }
+                R.id.bottom_information -> {
+                    startActivity(Intent(this, Information::class.java))
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    finish()
+                    true
+                }
+                R.id.bottom_challenge -> true
+                R.id.bottom_water -> {
+                    startActivity(Intent(this, PelacakAirActivity::class.java))
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    finish()
+                    true
+                }
+                R.id.bottom_profile -> {
+                    startActivity(Intent(this, Profile::class.java))
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    finish()
+                    true
+                }
+                else -> false
+            }
         }
     }
 
