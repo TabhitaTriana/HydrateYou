@@ -14,6 +14,7 @@
         android:layout_height="750dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="56dp"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -319,13 +320,15 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:menu="@menu/bottom_nav_menu"
+        android:layout_height="60dp"
         android:background="@drawable/bottom_background"
+        app:menu="@menu/bottom_nav_menu"
         app:itemIconSize="24dp"
         app:itemIconTint="@drawable/item_selector"
         app:itemRippleColor="@android:color/transparent"
         app:labelVisibilityMode="unlabeled"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
