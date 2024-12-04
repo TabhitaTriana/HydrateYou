@@ -3,13 +3,19 @@ package com.example.hydrateyou
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class PelacakAirActivity : AppCompatActivity() {
 
@@ -36,8 +42,7 @@ class PelacakAirActivity : AppCompatActivity() {
         // Initialize Firebase reference
         val database = FirebaseDatabase.getInstance()
         val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
-        userRef = database.getReference("users/$userId/dailyWater")
-
+        userRef = database.getReference("users/$userId")
 
         // Initialize buttons
         val buttonAmounts = mapOf(
@@ -55,6 +60,34 @@ class PelacakAirActivity : AppCompatActivity() {
             }
         }
 
+        val tvDateToday: TextView = findViewById(R.id.tvDateToday)
+
+        // Dapatkan tanggal hari ini
+        val calendar = Calendar.getInstance()
+        val dateFormatToday = SimpleDateFormat("EEEE, d MMMM yyyy", Locale.getDefault())
+        val todayDate = dateFormatToday.format(calendar.time)
+
+        // Tampilkan di TextView
+        tvDateToday.text = todayDate
+
+        val buttonIds = listOf(
+            R.id.button_tanggal,
+            R.id.button_tanggal2,
+            R.id.button_tanggal3,
+            R.id.button_tanggal4,
+            R.id.button_tanggal5
+        )
+
+        // Format tanggal
+        val dateFormat = SimpleDateFormat("dd MMM", Locale.getDefault())
+
+        // Mengisi tombol dengan tanggal
+        val calendarForButtons = Calendar.getInstance()
+        buttonIds.forEach { buttonId ->
+            val button = findViewById<Button>(buttonId)
+            button.text = dateFormat.format(calendarForButtons.time)
+            calendarForButtons.add(Calendar.DAY_OF_YEAR, 1) // Tambah 1 hari
+        }
 
         // Initialize BottomNavigationView
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)

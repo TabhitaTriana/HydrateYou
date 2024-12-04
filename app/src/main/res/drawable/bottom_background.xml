@@ -5,6 +5,6 @@
     <solid
         android:color="@color/colorPrimaryDark"/>
     <corners
-        android:radius="40dp"/>
+        android:radius="0dp"/>
     <elevation android:height="2dp" />
 </shape>
