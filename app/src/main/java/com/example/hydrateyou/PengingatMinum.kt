@@ -1,20 +1,21 @@
 package com.example.hydrateyou
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class PengingatMinum : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_pengingat_minum)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        // Tombol OK
+        val okeButton = findViewById<Button>(R.id.okeoke)
+        okeButton.setOnClickListener {
+            // Arahkan ke MainActivity atau halaman utama lainnya
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 }
