@@ -35,14 +35,18 @@ class Login : AppCompatActivity() {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-                            // Pengguna berhasil login
-                            val user = auth.currentUser
+                            // Simpan status login di SharedPreferences
+                            val sharedPref = getSharedPreferences("HydrateYouPrefs", MODE_PRIVATE)
+                            val editor = sharedPref.edit()
+                            editor.putBoolean("isLoggedIn", true)
+                            editor.apply()
+
                             Toast.makeText(this, "Login berhasil", Toast.LENGTH_SHORT).show()
-                            // Arahkan ke halaman utama
-                            startActivity(Intent(this, MainActivity::class.java))
+
+                            // Arahkan ke PengingatMinum
+                            startActivity(Intent(this, PengingatMinum::class.java))
                             finish()
                         } else {
-                            // Jika gagal
                             Toast.makeText(this, "Login gagal: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                         }
                     }
