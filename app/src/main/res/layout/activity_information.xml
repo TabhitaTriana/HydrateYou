@@ -4,33 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     tools:context=".Information">
 
 
     <ScrollView
-        android:layout_width="442dp"
+        android:layout_width="match_parent"
         android:layout_height="750dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="6dp">
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
-
-            <ImageButton
-                android:id="@+id/backButtoninfo"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginTop="24dp"
-                android:backgroundTint="@color/white"
-                android:src="@drawable/ic_back"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <!-- Title -->
             <TextView
                 android:id="@+id/tvTitle1"
                 android:layout_width="wrap_content"
@@ -39,16 +29,16 @@
                 android:text="Kenapa Minum"
                 android:textColor="@color/blue_427"
                 android:textSize="32sp"
+
                 android:textStyle="bold"
-
-                app:layout_constraintStart_toStartOf="@id/backButtoninfo"
-                app:layout_constraintTop_toBottomOf="@id/backButtoninfo" />
-
+                tools:layout_editor_absoluteX="24dp"
+                tools:layout_editor_absoluteY="56dp" />
 
             <TextView
                 android:id="@+id/tvTitle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:fontFamily="@font/righteous"
                 android:text="@string/air_putih"
                 android:textColor="@color/blue_427"
@@ -57,10 +47,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTitle1" />
 
+            <!-- Explanation Section -->
             <TextView
                 android:id="@+id/tvTitle3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:fontFamily="@font/righteous"
                 android:text="@string/itu_penting"
                 android:textColor="@color/blue_427"
@@ -69,31 +61,34 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTitle2" />
 
-            <!-- Explanation Section -->
+
+            <!-- Subtitle -->
+
             <TextView
                 android:id="@+id/tvExplanation"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:fontFamily="@font/poppins_regular"
                 android:padding="16dp"
                 android:text="@string/explanation_air_putih"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTitle3" />
 
-
-            <!-- Subtitle -->
             <TextView
                 android:id="@+id/tvSubtitle"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="@string/subtitle_perbandingan_kontribusi_hidrasi"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvExplanation" />
 
@@ -315,10 +310,9 @@
                         app:layout_constraintEnd_toStartOf="@id/imgJus"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvJus" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

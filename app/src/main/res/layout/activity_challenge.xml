@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_DDF">
+    android:background="@color/blue_4FE">
 
     <!-- Header -->
     <TextView
@@ -11,9 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Challenge"
-        android:textSize="28sp"
+        android:textSize="40sp"
         android:textColor="@color/black"
-        android:fontFamily="@font/poppins_semibold"
+        android:fontFamily="@font/righteous"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,9 +36,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="20dp"
+            android:padding="30dp"
             android:gravity="center"
-            android:background="@drawable/gradient_background_1">
+            android:background="@drawable/gradient_background_3">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -71,7 +71,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tekan"
-                android:layout_marginTop="12dp"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginTop="18dp"
                 android:backgroundTint="@color/blue_164"
                 android:textColor="@android:color/white"
                 android:paddingHorizontal="24dp"
